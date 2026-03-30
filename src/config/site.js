@@ -24,26 +24,26 @@ export const site = {
   },
 };
 
-/** Placeholder timeline — replace when steering committee publishes official dates. */
+/** ICAMI 2026 timeline. */
 export const importantDates = [
   {
     label: "Paper submission deadline",
-    date: "To be announced",
+    date: "July 2026",
     highlight: true,
   },
   {
     label: "Notification of acceptance",
-    date: "To be announced",
+    date: "October 2026",
     highlight: true,
   },
   {
     label: "Camera-ready deadline",
-    date: "To be announced",
-    highlight: false,
+    date: "November 2026",
+    highlight: true,
   },
   {
     label: "Conference dates",
-    date: "To be announced",
+    date: "December 2026",
     highlight: true,
   },
 ];
@@ -240,3 +240,78 @@ export const tracks = [
 
 /** Homepage preview: first N tracks with link to full page. */
 export const tracksHomePreviewCount = 6;
+
+/**
+ * Temporary keynote roster sourced from current committee members.
+ * Replace with confirmed invited speakers as invitations finalize.
+ */
+export const keynotes = [
+  {
+    name: "Prof. Dr. Mohammad Firoz Mridha",
+    affiliation:
+      "Professor & Head, Department of CSE, American International University-Bangladesh (AIUB)",
+    talkTitle: "Keynote title to be announced",
+    image: "https://cdn.icami.net/speakers/dmfm.png",
+  },
+  {
+    name: "Prof. Dr. Jungpil Shin",
+    affiliation: "Professor, Department of Computer Science, University of Aizu, Japan",
+    talkTitle: "Keynote title to be announced",
+    image: "https://cdn.icami.net/speakers/shin.jpg",
+  },
+  {
+    name: "Prof. Dr. Muhammad Mostofa Monwar",
+    affiliation: "Professor, Department of IT, King Abdulaziz University",
+    talkTitle: "Keynote title to be announced",
+    image: "https://cdn.icami.net/speakers/mostofa.jpeg",
+  },
+  {
+    name: "Prof. Dr. Md. Abdul Hamid",
+    affiliation: "Professor, Department of IT, King Abdulaziz University",
+    talkTitle: "Keynote title to be announced",
+  },
+  {
+    name: "Dr. Nilanjan Dey",
+    affiliation:
+      "Professor, Department of Computer Science, Techno International New Town",
+    talkTitle: "Keynote title to be announced",
+  },
+];
+
+export const keynotesHomePreviewCount = 3;
+
+/** Sponsors and organizing partners (logo assets hosted on cdn.icami.net). */
+export const sponsorGroups = [
+  {
+    title: "Organizer",
+    items: [
+      {
+        name: "AMIR Lab",
+        logo: "https://cdn.icami.net/orgs/amirlab.png",
+        href: "https://amirl.org",
+      },
+    ],
+  },
+  {
+    title: "Sponsors",
+    items: [
+      {
+        name: "IEEE",
+        logo: "https://cdn.icami.net/orgs/ieee.png",
+      },
+      {
+        name: "Academist",
+        logo: "https://cdn.icami.net/orgs/academist.png",
+      },
+    ],
+  },
+  {
+    title: "Publication Partner",
+    items: [
+      {
+        name: "IEEE Xplore",
+        logo: "https://cdn.icami.net/orgs/ieeex.png",
+      },
+    ],
+  },
+];
