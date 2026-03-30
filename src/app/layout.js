@@ -48,8 +48,8 @@ export default function RootLayout({ children }) {
       <body className="flex min-h-full flex-col bg-slate-100 text-slate-900 antialiased">
         <MotionRoot>
           <SiteHeader />
-          {/* Bottom padding clears fixed dock (<lg); must wrap footer too or last content is covered. */}
-          <div className="flex flex-1 flex-col pb-[calc(5rem+env(safe-area-inset-bottom,0px))] lg:pb-0">
+          {/* Bottom padding clears fixed dock (<lg) without leaving a large visible gap. */}
+          <div className="flex flex-1 flex-col pb-[calc(4.25rem+env(safe-area-inset-bottom,0px))] lg:pb-0">
             {children}
             <SiteFooter />
           </div>
