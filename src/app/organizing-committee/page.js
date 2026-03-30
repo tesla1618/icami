@@ -188,7 +188,11 @@ export default function OrganizingCommitteePage() {
 
       <h2 className="mt-10">SPECIALIZED CHAIRS</h2>
       <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        <MemberCard label="Publicity Chair" name="Md. Mehedi Hasan" />
+        <MemberCard
+          label="Publicity Chair"
+          name="Md. Mehedi Hasan"
+          affiliation="B.Sc. Undergraduate — CSE, Bangladesh University of Business and Technology (BUBT)."
+        />
         <MemberCard
           label="Creative & Design Chair"
           name="Naziba Tasnim"
