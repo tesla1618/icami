@@ -30,7 +30,7 @@ function FooterDeveloperCredit({ tone }) {
         >
           {name}
         </a>
-        , a researcher at the{" "}
+        .<br />A researcher at the{" "}
         <a
           href={labUrl}
           className={linkClass}
@@ -42,8 +42,8 @@ function FooterDeveloperCredit({ tone }) {
         .
       </p>
       <p className={`mt-3 text-[0.75rem] sm:text-xs ${body}`}>
-        This website is open source. Contributions, improvements, and feedback
-        are welcome via{" "}
+        This website is free and open source ❤️ Contributions, improvements, and
+        feedback are welcome via{" "}
         <a
           href="https://github.com/tesla1618/icami"
           target="_blank"
@@ -147,7 +147,7 @@ export function SiteFooter() {
         <div className="relative border-t border-white/[0.04] px-5 py-7 text-center text-xs sm:px-10 md:px-14">
           <p className="text-zinc-500">
             © 2026{" "}
-            <strong className="text-icami-blue hover:text-icami-blue-muted cursor-pointer hover:underline">
+            <strong className="text-icami-blue hover:text-icami-blue-bright cursor-pointer hover:underline">
               ICAMI
             </strong>
             . All rights reserved.
@@ -229,7 +229,7 @@ export function SiteFooter() {
       <div className="border-t border-slate-200/80 px-5 py-6 text-center text-xs sm:px-10 md:px-14">
         <p className="text-slate-500">
           © 2026{" "}
-          <strong className="text-icami-blue hover:text-icami-blue-muted">
+          <strong className="text-icami-blue hover:text-icami-blue-muted cursor-pointer hover:underline">
             ICAMI
           </strong>
           . All rights reserved.
