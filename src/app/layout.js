@@ -43,6 +43,7 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={`${robotoSlab.variable} ${bebasNeue.variable} h-full`}
+      data-scroll-behavior="smooth"
     >
       <body className="flex min-h-full flex-col bg-slate-100 text-slate-900 antialiased">
         <MotionRoot>
