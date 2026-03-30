@@ -86,9 +86,7 @@ export function SiteFooter() {
             </p>
           </div>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-600">
-              Quick links
-            </p>
+            <p className="icami-mono-eyebrow text-zinc-500">Quick links</p>
             <ul className="mt-5 space-y-3 text-sm">
               {footerQuick.map((item) => (
                 <li key={item.href}>
@@ -103,9 +101,7 @@ export function SiteFooter() {
             </ul>
           </div>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-600">
-              Contact
-            </p>
+            <p className="icami-mono-eyebrow text-zinc-500">Contact</p>
             <a
               href={`mailto:${site.contactEmail}`}
               className="mt-5 inline-block text-sm text-sky-300/95 transition-colors hover:text-white"
