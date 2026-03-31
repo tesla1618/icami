@@ -7,7 +7,7 @@ const heroPullUnderNav = "-mt-[calc(4rem+env(safe-area-inset-top,0px))]";
 export default function HomePage() {
   return (
     <>
-      <div className={`relative z-0 bg-[#02040c] ${heroPullUnderNav}`}>
+      <div className={`relative z-0 bg-slate-50 ${heroPullUnderNav}`}>
         <HeroSection />
       </div>
       <div className="bg-slate-100">
