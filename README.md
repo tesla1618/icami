@@ -166,3 +166,6 @@ No server secrets should live in this repo. If you add integrations later:
 ## License
 
 See `LICENSE`.
+
+## Typos in commit history
+Deal with it. I am lzaly
