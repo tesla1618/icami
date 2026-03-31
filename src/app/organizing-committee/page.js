@@ -210,6 +210,11 @@ export default function OrganizingCommitteePage() {
           affiliation="Senior Data Scientist at Walmart, USA"
         />
         <MemberCard
+          label="Industry Chairs"
+          name="Md Habibur Rahman"
+          affiliation="Postdoctoral Scholar, Qualcomm Institute, University of California, San Diego, CA"
+        />
+        <MemberCard
           label="Publicity Chair"
           name="Md. Mehedi Hasan"
           affiliation="B.Sc. Undergraduate — CSE, Bangladesh University of Business and Technology (BUBT)."
