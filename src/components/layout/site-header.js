@@ -6,7 +6,64 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { MobileNavDock } from "@/components/layout/mobile-nav-dock";
 import { NavigationOverlay } from "@/components/layout/navigation-overlay";
-import { navQuick, site } from "@/config/site";
+import { navGroups, site } from "@/config/site";
+
+function NavDropdown({ label, links, pathname }) {
+  const hasActive = links.some(
+    (l) =>
+      l.href === "/"
+        ? pathname === "/"
+        : pathname === l.href || pathname.startsWith(`${l.href}/`),
+  );
+
+  return (
+    <div className="group relative">
+      <button
+        type="button"
+        className={`flex cursor-pointer items-center gap-1 rounded-full px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-wider transition ${
+          hasActive
+            ? "text-icami-blue"
+            : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+        }`}
+      >
+        {label}
+        <svg
+          className="h-3 w-3 opacity-40 transition-transform group-hover:rotate-180"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2.5}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+
+      <div className="pointer-events-none absolute right-0 top-full z-50 pt-2 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:opacity-100">
+        <div className="animate-dropdown min-w-[220px] rounded-lg border border-slate-200/90 bg-white/98 py-2 shadow-xl shadow-slate-900/[0.08] backdrop-blur-xl">
+          {links.map((l) => {
+            const active =
+              l.href === "/"
+                ? pathname === "/"
+                : pathname === l.href || pathname.startsWith(`${l.href}/`);
+            return (
+              <Link
+                key={l.href}
+                href={l.href}
+                className={`block cursor-pointer px-4 py-2 text-[0.78rem] transition ${
+                  active
+                    ? "bg-icami-blue/6 font-semibold text-icami-blue"
+                    : "text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+                }`}
+              >
+                {l.label}
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function useLockBody(locked) {
   useEffect(() => {
@@ -47,7 +104,7 @@ function SiteHeaderInner() {
     return () => window.removeEventListener("scroll", sync);
   }, [isHome]);
 
-  /** On the homepage: blend into hero until scroll; solid bar while Explore is open. */
+  /** Light hero: keep a readable light header on home as well. */
   const homeBarSolid = !isHome || homeScrolled || open;
 
   const openExplore = useCallback(() => {
@@ -66,8 +123,8 @@ function SiteHeaderInner() {
         className={
           isHome
             ? homeBarSolid
-              ? "sticky top-0 z-[300] isolate border-b border-white/[0.07] bg-[#070b14] pt-[env(safe-area-inset-top,0px)] [transform:translateZ(0)] transition-[background-color,backdrop-filter,border-color,box-shadow] duration-300 ease-out max-md:backdrop-blur-none md:bg-[#070b14]/90 md:backdrop-blur-xl"
-              : "sticky top-0 z-[300] isolate b bg-transparent pt-[env(safe-area-inset-top,0px)] shadow-none backdrop-blur-none [transform:translateZ(0)] transition-[background-color,backdrop-filter,border-color,box-shadow] duration-300 ease-out"
+              ? "sticky top-0 z-[300] isolate border-b border-slate-200/80 bg-white pt-[env(safe-area-inset-top,0px)] shadow-sm shadow-slate-900/[0.04] [transform:translateZ(0)] transition-[background-color,backdrop-filter,border-color,box-shadow] duration-300 ease-out max-md:backdrop-blur-none md:bg-white/95 md:backdrop-blur-xl"
+              : "sticky top-0 z-[300] isolate border-b border-transparent bg-transparent pt-[env(safe-area-inset-top,0px)] shadow-none backdrop-blur-none [transform:translateZ(0)] transition-[background-color,backdrop-filter,border-color,box-shadow] duration-300 ease-out"
             : "sticky top-0 z-[300] isolate relative border-b border-slate-200/80 bg-white pt-[env(safe-area-inset-top,0px)] shadow-sm shadow-slate-900/[0.04] [transform:translateZ(0)] after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:z-[1] after:h-px after:bg-gradient-to-r after:from-transparent after:via-[#0033a0]/22 after:to-transparent max-md:backdrop-blur-none md:bg-white/95 md:backdrop-blur-xl"
         }
       >
@@ -96,70 +153,33 @@ function SiteHeaderInner() {
             />
             <span
               className={`font-heading min-w-0 truncate text-[0.95rem] leading-none tracking-wide sm:text-lg ${
-                isHome
-                  ? homeBarSolid
-                    ? "text-white"
-                    : "text-white drop-shadow-[0_1px_12px_rgba(0,0,0,0.45)]"
-                  : "text-slate-900"
+                isHome ? "text-slate-900" : "text-slate-900"
               }`}
             >
               {site.shortTitle}
             </span>
           </Link>
 
-          <div className="hidden min-w-0 flex-1 items-center justify-center gap-2 md:flex">
-            {navQuick.map((q) => (
-              <Link
-                key={q.href}
-                href={q.href}
-                className={
-                  isHome
-                    ? homeBarSolid
-                      ? "rounded-full border border-white/15 bg-white/[0.06] px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-200 transition-colors hover:border-white/25 hover:bg-white/10"
-                      : "rounded-full border border-transparent bg-transparent px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-white drop-shadow-[0_1px_6px_rgba(0,0,0,0.55)] transition-colors hover:bg-white/[0.08]"
-                    : "rounded-full border border-slate-200 bg-slate-50/80 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-slate-700 transition hover:border-sky-200 hover:bg-sky-50"
-                }
-              >
-                {q.label}
-              </Link>
-            ))}
-          </div>
-
-          <div className="ml-auto hidden shrink-0 items-center gap-2 sm:gap-3 lg:flex">
-            <button
-              type="button"
-              onClick={openExplore}
-              className={
-                isHome
-                  ? homeBarSolid
-                    ? "group relative z-20 isolate flex min-h-[44px] min-w-0 shrink-0 cursor-pointer touch-manipulation items-center justify-center gap-2 overflow-hidden rounded-full px-5 py-2 text-sm font-semibold text-white shadow-[0_0_0_1px_rgba(255,255,255,0.12)] transition hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25)] [-webkit-tap-highlight-color:transparent]"
-                    : "group relative z-20 flex min-h-[44px] min-w-0 shrink-0 cursor-pointer touch-manipulation items-center justify-center gap-2 rounded-full border border-transparent bg-transparent px-5 py-2 text-sm font-semibold text-white shadow-none ring-0 transition hover:bg-white/[0.07] [-webkit-tap-highlight-color:transparent]"
-                  : "group relative z-20 isolate flex min-h-[44px] min-w-0 shrink-0 cursor-pointer touch-manipulation items-center justify-center gap-2 overflow-hidden rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-sky-300/80 hover:bg-sky-50/80 [-webkit-tap-highlight-color:transparent]"
-              }
-              aria-expanded={open}
-              aria-controls="nav-explore-overlay"
-              aria-haspopup="dialog"
+          <nav className="hidden min-w-0 flex-1 items-center justify-end gap-0.5 lg:flex">
+            <Link
+              href="/"
+              className={`cursor-pointer rounded-full px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-wider transition ${
+                pathname === "/"
+                  ? "text-icami-blue"
+                  : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+              }`}
             >
-              {!isHome ? (
-                <span className="pointer-events-none absolute inset-0 bg-gradient-to-r from-sky-500/10 via-transparent to-amber-400/10 opacity-0 transition group-hover:opacity-100" />
-              ) : homeBarSolid ? (
-                <span className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0033a0]/40 via-sky-600/20 to-amber-500/10 opacity-90" />
-              ) : null}
-              <span className="relative z-10 grid h-5 w-5 shrink-0 grid-cols-2 grid-rows-2 gap-0.5 place-items-center">
-                {[0, 1, 2, 3].map((i) => (
-                  <span
-                    key={i}
-                    className={`pointer-events-none h-1.5 w-1.5 rounded-sm ${
-                      isHome ? "bg-white/90" : "bg-sky-600"
-                    }`}
-                  />
-                ))}
-              </span>
-              <span className="relative z-10 font-heading tracking-wide">
-                Explore
-              </span>
-            </button>
-          </div>
+              Home
+            </Link>
+            {navGroups.map((g) => (
+              <NavDropdown
+                key={g.title}
+                label={g.title.split(" & ")[0]}
+                links={g.links}
+                pathname={pathname}
+              />
+            ))}
+          </nav>
         </div>
       </header>
 
@@ -171,7 +191,6 @@ function SiteHeaderInner() {
       />
 
       <MobileNavDock
-        isHome={isHome}
         exploreOpen={open}
         onOpenExplore={openExplore}
       />
