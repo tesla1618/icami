@@ -1,9 +1,16 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 import Image from "next/image";
-import { keynotes, keynotesHomePreviewCount } from "@/config/site";
+import { keynotesHomePreviewCount } from "@/config/site";
 
 export function KeynotesPreview() {
-  const preview = keynotes.slice(0, keynotesHomePreviewCount);
+  // Keynote roster is temporarily TBA.
+  const preview = Array.from({ length: keynotesHomePreviewCount }, (_, i) => ({
+    name: "TBA",
+    affiliation: "TBA",
+    talkTitle: "TBA",
+    image: null,
+    _idx: i,
+  }));
 
   return (
     <section className="scroll-mt-8">
@@ -16,7 +23,7 @@ export function KeynotesPreview() {
       <ul className="mt-12 grid items-stretch gap-6 md:grid-cols-3">
         {preview.map((speaker, i) => (
           <li
-            key={speaker.name}
+            key={`${speaker.name}-${i}`}
             className="icami-card group relative flex h-full flex-col p-7 transition will-change-transform"
           >
             <div className="mb-4 flex items-center justify-between gap-3">
