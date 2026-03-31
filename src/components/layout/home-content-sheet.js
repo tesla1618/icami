@@ -6,7 +6,7 @@ import { LightHudCorners } from "@/components/ui/light-hud-corners";
 export function HomeContentSheet({ children, className = "" }) {
   return (
     <div
-      className={`relative mx-auto w-full max-w-7xl overflow-hidden rounded-t-[2rem] border border-white/60 bg-gradient-to-b from-white via-[#fafbfd] to-[#f0f4fa] px-6 py-20 shadow-[0_-12px_60px_-12px_rgba(0,20,60,0.45),inset_0_1px_0_rgba(255,255,255,0.9)] sm:px-10 sm:py-24 md:rounded-t-[2.25rem] md:px-16 md:py-28 lg:px-20 lg:py-32 ${className}`}
+      className={`relative mx-auto w-full max-w-7xl overflow-hidden rounded-t-[2rem] border border-white/60 bg-gradient-to-b from-white via-[#fafbfd] to-[#f0f4fa] px-6 py-20 shadow-[0_-12px_60px_-12px_rgba(0,20,60,0.45),inset_0_1px_0_rgba(255,255,255,0.9)] sm:px-10 sm:pt-24 sm:pb-24 md:rounded-t-[2.25rem] md:px-16 md:py-28 lg:px-20 lg:pt-16 lg:pb-32 ${className}`}
     >
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#0033a0]/35 to-transparent"
