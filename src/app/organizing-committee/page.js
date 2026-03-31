@@ -158,7 +158,7 @@ export default function OrganizingCommitteePage() {
         <MemberCard
           label="Area Chair"
           name="Dr. M. F. Mridha"
-          affiliation="Department of Computer Science, American International University - Bangladesh (AIUB), Dhaka 1229, Bangladesh"
+          affiliation="Head of Department, Department of Computer Science, American International University - Bangladesh (AIUB)"
         />
         <MemberCard
           label="Area Chair"
@@ -192,13 +192,13 @@ export default function OrganizingCommitteePage() {
         <MemberCard
           label="Publicity / Communication Chair"
           name="Dr. Md. Rashedul Islam"
-          affiliation="Department of Computer Science and Engineering, University of Asia Pacific, Dhaka 1216, Bangladesh"
+          affiliation="Manager, Overseas AI group, Chowagiken, Japan,"
         />
-        <MemberCard
+        {/* <MemberCard
           label="Creative & Design Chair"
           name="Naziba Tasnim"
           affiliation="BS, Computer Science — BRAC University."
-        />
+        /> */}
         <MemberCard
           label="Industry Chairs"
           name="Dr. Md.Nahid Newaz"
@@ -214,11 +214,11 @@ export default function OrganizingCommitteePage() {
           name="Md Habibur Rahman"
           affiliation="Postdoctoral Scholar, Qualcomm Institute, University of California, San Diego, CA"
         />
-        <MemberCard
+        {/* <MemberCard
           label="Publicity Chair"
           name="Md. Mehedi Hasan"
           affiliation="B.Sc. Undergraduate — CSE, Bangladesh University of Business and Technology (BUBT)."
-        />
+        /> */}
       </div>
 
       <h2 className="mt-10">LOCAL ORGANIZATION</h2>
@@ -238,14 +238,14 @@ export default function OrganizingCommitteePage() {
         />
       </div>
 
-      <h2 className="mt-10">PLATFORM CHAIR</h2>
+      {/* <h2 className="mt-10">PLATFORM CHAIR</h2>
       <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <MemberCard
           label="Platform Chair"
           name="Rajieb"
           affiliation="Master of Computer Science, Military Institute of Science and Technology (MIST)"
         />
-      </div>
+      </div> */}
     </DocumentPage>
   );
 }
