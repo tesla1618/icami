@@ -59,16 +59,19 @@ export function HeroSection() {
           paddingRight: "0",
         }}
       >
-        <div className="mx-auto flex w-full max-w-7xl flex-col justify-between gap-4 h-full px-5 sm:px-8 lg:px-12 lg:pb-0" style={{ paddingBottom: "0" }}>
-
+        <div
+          className="mx-auto flex w-full max-w-7xl flex-col justify-between gap-4 h-full px-5 sm:px-8 lg:px-12 lg:pb-0"
+          style={{ paddingBottom: "0" }}
+        >
           {/* ── Logo ── */}
           <motion.div {...fade(0)} className="shrink-0">
             <Image
-              src="/icami.png"
+              id="hero-logo"
+              src="/icami_dark.png"
               alt={site.shortTitle}
-              width={400}
-              height={200}
-              className="h-auto w-[clamp(9rem,28vw,14rem)] drop-shadow-[0_2px_24px_rgba(30,92,255,0.4)]"
+              width={480}
+              height={240}
+              className="h-auto w-[clamp(9rem,28vw,26rem)] drop-shadow-[0_2px_24px_rgba(30,92,255,0.4)]"
               priority
             />
           </motion.div>
@@ -96,7 +99,10 @@ export function HeroSection() {
               {site.tagline}
             </motion.p>
 
-            <motion.div {...fade(0.38)} className="flex flex-wrap gap-3 pt-1 sm:gap-4">
+            <motion.div
+              {...fade(0.38)}
+              className="flex flex-wrap gap-3 pt-1 sm:gap-4"
+            >
               <Link
                 href="/call-for-papers"
                 className="inline-flex min-h-[44px] items-center justify-center bg-white px-6 text-[0.78rem] font-bold uppercase tracking-wider text-slate-900 shadow-[0_14px_40px_-12px_rgba(255,255,255,0.25)] transition hover:bg-sky-50 hover:text-icami-blue"
@@ -142,8 +148,16 @@ export function HeroSection() {
                   stroke="currentColor"
                   strokeWidth={1.8}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                  />
                 </svg>
                 <span className="text-sm font-medium text-white/90 transition group-hover:text-white">
                   {site.location}
