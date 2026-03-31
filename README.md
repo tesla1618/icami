@@ -4,7 +4,7 @@ Conference website. Clean UX. If something looks wrong, it probably is.
 
 ## What you get
 
-- **Home page** with a dark hero + “editorial tech” layout.
+- **Home page** (ofc)
 - **Inner document pages** with:
   - Breadcrumb (sticky)
   - On-page TOC (generated from headings)
@@ -47,6 +47,7 @@ npm run deploy
 ```
 
 Notes:
+
 - `npm run export` writes to `out/`.
 - If routes break on Pages, check `next.config.js` and your Pages base path setup.
 
@@ -56,8 +57,57 @@ Notes:
   - `site.*` (title/location/tagline/contact)
   - `navPrimary`, `navMore`, `navGroups` (Explore overlay)
   - `importantDates`, `tracks`, etc.
+- **Announcements (markdown source)**: `content/announcements/*.md`
+  - One file = one announcement.
+  - Frontmatter controls title/date/excerpt and read-more behavior.
 - **Organizing committee**: `src/app/organizing-committee/page.js`
   - Member cards, roles, and sections live here.
+
+## Announcements system (markdown + dynamic links)
+
+This site now ships with a markdown-backed announcements pipeline:
+
+- **Source files** live in `content/announcements/`.
+- **Homepage preview** renders from markdown.
+- **All announcements page** renders full listing.
+- **Detail pages** auto-generate at `/announcements/[slug]`.
+- **Read more** is dynamic per item:
+  - default: opens that item’s internal detail page
+  - optional override: link to any existing page (or external URL)
+
+Implementation files:
+
+- `src/lib/announcements.js` (markdown loader + frontmatter parsing)
+- `src/components/home/announcements-preview.js` (home section UI)
+- `src/app/announcements/page.js` (listing page)
+- `src/app/announcements/[slug]/page.js` (detail page renderer)
+- `src/app/page.js` + `src/components/home/home-page-client.js` (home data wiring)
+
+### Markdown format
+
+Create a new file in `content/announcements/`:
+
+```md
+---
+title: "Registration Policy Update"
+date: "2026-04-02"
+excerpt: "Base fee is USD 500 with max-discount logic."
+readMoreUrl: "/registration/fees" # optional
+---
+
+Body content in Markdown.
+```
+
+Frontmatter fields:
+
+- `title` (required-ish; falls back to slug if missing)
+- `date` (recommended, ISO-like string)
+- `excerpt` (recommended; falls back to first non-empty markdown line)
+- `readMoreUrl` (optional)
+  - if omitted -> button points to `/announcements/[slug]`
+  - if provided -> button points to the given URL (internal or external)
+
+No magic. Add markdown, ship.
 
 ## Routes
 
@@ -78,6 +128,7 @@ App Router pages live in `src/app/*/page.js`. Current top-level routes include:
 - `/registration/guidelines`
 - `/venue`
 - `/sponsors`
+- `/announcements`
 - `/awards`
 - `/accepted-papers`
 - `/faq`
@@ -107,6 +158,7 @@ App Router pages live in `src/app/*/page.js`. Current top-level routes include:
 ## Security / privacy
 
 No server secrets should live in this repo. If you add integrations later:
+
 - don’t commit `.env` files
 - don’t hardcode tokens
 - assume git history is forever
