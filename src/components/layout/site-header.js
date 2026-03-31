@@ -10,24 +10,32 @@ import { navGroups, site } from "@/config/site";
 
 function isLinkActive(pathname, href) {
   if (href === "/") return pathname === "/";
-  // Special-case registration tree: only exact match, children own their path.
   if (href === "/registration") return pathname === "/registration";
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
-function NavDropdown({ label, links, pathname }) {
+function navLinkClass(active, transparent) {
+  if (active) {
+    return "cursor-pointer rounded-full px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-wider underline decoration-icami-blue decoration-2 underline-offset-[6px]"
+      + (transparent ? " text-white" : " text-slate-900");
+  }
+  return "cursor-pointer rounded-full px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-wider transition"
+    + (transparent
+      ? " text-white/80 hover:text-white hover:bg-white/10"
+      : " text-slate-600 hover:bg-slate-100 hover:text-slate-900");
+}
+
+function NavDropdown({ label, links, pathname, transparent }) {
   const hasActive = links.some((l) => isLinkActive(pathname, l.href));
+
+  const btnBase = "flex cursor-pointer items-center gap-1 rounded-full px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-wider transition";
+  const btnClass = hasActive
+    ? `${btnBase} underline decoration-icami-blue decoration-2 underline-offset-[6px]${transparent ? " text-white" : " text-slate-900"}`
+    : `${btnBase}${transparent ? " text-white/80 hover:text-white hover:bg-white/10" : " text-slate-600 hover:bg-slate-100 hover:text-slate-900"}`;
 
   return (
     <div className="group relative">
-      <button
-        type="button"
-        className={`flex cursor-pointer items-center gap-1 rounded-full px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-wider transition ${
-          hasActive
-            ? "text-icami-blue"
-            : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
-        }`}
-      >
+      <button type="button" className={btnClass}>
         {label}
         <svg
           className="h-3 w-3 opacity-40 transition-transform group-hover:rotate-180"
@@ -36,11 +44,7 @@ function NavDropdown({ label, links, pathname }) {
           stroke="currentColor"
           strokeWidth={2.5}
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-          />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
       </button>
 
@@ -89,7 +93,6 @@ const HOME_SCROLL_SOLID_PX = 24;
 function SiteHeaderInner() {
   const pathname = usePathname();
   const isHome = pathname === "/";
-  /** Explore dialog always uses the light card (same as inner pages); homepage header stays dark. */
   const exploreTheme = "light";
 
   const exploreDialogRef = useRef(null);
@@ -99,16 +102,14 @@ function SiteHeaderInner() {
 
   useEffect(() => {
     if (!isHome) return;
-    const sync = () => {
-      setHomeScrolled(window.scrollY > HOME_SCROLL_SOLID_PX);
-    };
+    const sync = () => setHomeScrolled(window.scrollY > HOME_SCROLL_SOLID_PX);
     sync();
     window.addEventListener("scroll", sync, { passive: true });
     return () => window.removeEventListener("scroll", sync);
   }, [isHome]);
 
-  /** Light hero: keep a readable light header on home as well. */
   const homeBarSolid = !isHome || homeScrolled || open;
+  const transparent = isHome && !homeBarSolid;
 
   const openExplore = useCallback(() => {
     const el = exploreDialogRef.current;
@@ -127,24 +128,14 @@ function SiteHeaderInner() {
           isHome
             ? homeBarSolid
               ? "sticky top-0 z-[300] isolate border-b border-slate-200/80 bg-white pt-[env(safe-area-inset-top,0px)] shadow-sm shadow-slate-900/[0.04] [transform:translateZ(0)] transition-[background-color,backdrop-filter,border-color,box-shadow] duration-300 ease-out max-md:backdrop-blur-none md:bg-white/95 md:backdrop-blur-xl"
-              : "sticky top-0 z-[300] isolate bg-transparent pt-[env(safe-area-inset-top,0px)] shadow-none backdrop-blur-none [transform:translateZ(0)] transition-[background-color,backdrop-filter,border-color,box-shadow] duration-300 ease-out"
+              : "sticky top-0 z-[300] isolate border-b border-transparent bg-transparent pt-[env(safe-area-inset-top,0px)] shadow-none backdrop-blur-none [transform:translateZ(0)] transition-[background-color,backdrop-filter,border-color,box-shadow] duration-300 ease-out"
             : "sticky top-0 z-[300] isolate relative border-b border-slate-200/80 bg-white pt-[env(safe-area-inset-top,0px)] shadow-sm shadow-slate-900/[0.04] [transform:translateZ(0)] after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:z-[1] after:h-px after:bg-gradient-to-r after:from-transparent after:via-[#0033a0]/22 after:to-transparent max-md:backdrop-blur-none md:bg-white/95 md:backdrop-blur-xl"
         }
       >
-        <div
-          className={`relative z-10 mx-auto flex h-16 max-w-7xl items-center gap-2 px-3 sm:gap-4 sm:px-6 lg:px-8 ${
-            isHome && !homeBarSolid ? "bg-transparent text-slate-100" : ""
-          }`}
-        >
+        <div className="relative z-10 mx-auto flex h-16 max-w-7xl items-center gap-2 px-3 sm:gap-4 sm:px-6 lg:px-8">
           <Link
             href="/"
-            className={
-              isHome
-                ? homeBarSolid
-                  ? "focus-visible:ring-sky-400/80 flex min-w-0 flex-1 items-center gap-2 rounded-xl py-1 focus-visible:outline focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070b14] sm:min-w-0 sm:flex-initial sm:gap-3"
-                  : "focus-visible:ring-sky-400/80 flex min-w-0 flex-1 items-center gap-2 rounded-xl py-1 focus-visible:outline focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent sm:min-w-0 sm:flex-initial sm:gap-3"
-                : "focus-visible:ring-sky-500/80 flex min-w-0 flex-1 items-center gap-2 rounded-xl py-1 focus-visible:outline focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-white sm:min-w-0 sm:flex-initial sm:gap-3"
-            }
+            className="flex min-w-0 flex-1 items-center gap-2 rounded-xl py-1 sm:min-w-0 sm:flex-initial sm:gap-3"
           >
             <Image
               src="https://cdn.icami.net/icami.png"
@@ -155,8 +146,8 @@ function SiteHeaderInner() {
               priority
             />
             <span
-              className={`font-heading min-w-0 truncate text-[0.95rem] leading-none tracking-wide sm:text-lg ${
-                isHome ? "text-slate-900" : "text-slate-900"
+              className={`font-heading min-w-0 truncate text-[0.95rem] leading-none tracking-wide sm:text-lg transition-colors ${
+                transparent ? "text-white" : "text-slate-900"
               }`}
             >
               {site.shortTitle}
@@ -164,14 +155,7 @@ function SiteHeaderInner() {
           </Link>
 
           <nav className="hidden min-w-0 flex-1 items-center justify-end gap-0.5 lg:flex">
-            <Link
-              href="/"
-              className={`cursor-pointer rounded-full px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-wider transition ${
-                pathname === "/"
-                  ? "text-icami-blue"
-                  : "text-slate-900 hover:bg-slate-100 hover:text-slate-900"
-              }`}
-            >
+            <Link href="/" className={navLinkClass(pathname === "/", transparent)}>
               Home
             </Link>
             {navGroups.map((g) => (
@@ -180,15 +164,15 @@ function SiteHeaderInner() {
                 label={g.title.split(" & ")[0]}
                 links={g.links}
                 pathname={pathname}
+                transparent={transparent}
               />
             ))}
             <Link
               href="/contact"
-              className={`cursor-pointer rounded-full px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-wider transition ${
-                pathname === "/contact" || pathname.startsWith("/contact/")
-                  ? "text-icami-blue"
-                  : "text-[#0089cc] hover:bg-slate-100 hover:text-slate-900"
-              }`}
+              className={navLinkClass(
+                pathname === "/contact" || pathname.startsWith("/contact/"),
+                transparent,
+              )}
             >
               Contact
             </Link>
