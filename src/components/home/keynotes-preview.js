@@ -15,7 +15,7 @@ export function KeynotesPreview() {
   return (
     <section className="scroll-mt-8">
       <SectionHeading
-        index="05"
+        index="06"
         title="Keynote speakers"
         actionHref="/keynotes"
         actionLabel="All keynotes"
