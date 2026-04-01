@@ -64,7 +64,7 @@ export function HeroSection() {
           <motion.div {...fade(0)} className="shrink-0 ">
             <Image
               id="hero-logo"
-              src="/icami_dark.png"
+              src="/icami_dark.svg"
               alt={site.shortTitle}
               width={480}
               height={240}
