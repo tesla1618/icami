@@ -254,7 +254,7 @@ function SiteHeaderInner() {
               tabIndex={transparent ? -1 : undefined}
             >
               <Image
-                src="https://cdn.icami.net/icami.svg"
+                src="https://cdn.icami.net/icami_nav.svg"
                 alt=""
                 width={70}
                 height={70}
