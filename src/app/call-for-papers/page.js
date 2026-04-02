@@ -65,9 +65,9 @@ export default function CallForPapersPage() {
 
       <h2>Publication</h2>
       <p>
-        Accepted papers will be published in the official ICAMI 2026 proceedings.
-        Publication venue (e.g., IEEE, Springer, or other indexed proceedings)
-        will be confirmed on this page and in the acceptance notification.
+        Accepted papers will be published in the official ICAMI 2026 proceedings and indexed in the{" "}
+<b>IEEE Xplore Digital Library</b>.
+Publication details will be confirmed in the acceptance notification.
       </p>
 
       <h2>Formatting</h2>
