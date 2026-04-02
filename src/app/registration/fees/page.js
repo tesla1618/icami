@@ -3,7 +3,8 @@ import { RegistrationFeeCalculator } from "@/components/registration/fees-calcul
 
 export const metadata = {
   title: "Registration fees",
-  description: "ICAMI 2026 registration fees and interactive calculator. Base fee USD 500 with Research4Life and IEEE member discounts.",
+  description:
+    "ICAMI 2026 registration fees and interactive calculator. Base fee USD 500 with Research4Life and IEEE member discounts.",
 };
 
 export default function RegistrationFeesPage() {
@@ -29,31 +30,37 @@ export default function RegistrationFeesPage() {
       <h2>Discount policy</h2>
       <ul>
         <li>
-          <strong>Research4Life Category A countries:</strong> <strong>80% off</strong>
+          <strong>Research4Life Category A countries:</strong>{" "}
+          <strong>80% waiver</strong>
         </li>
         <li>
-          <strong>Research4Life Category B countries:</strong> <strong>50% off</strong>
+          <strong>Research4Life Category B countries:</strong>{" "}
+          <strong>50% waiver</strong>
         </li>
         <li>
-          <strong>IEEE members:</strong> <strong>25% off</strong>
+          <strong>IEEE members:</strong> <strong>25% waiver</strong>
         </li>
       </ul>
 
       <h2>How discounts are applied</h2>
       <p>
-        Discounts are <strong>not cumulative</strong>. If a participant is eligible for
-        multiple discounts, the system applies only the <strong>highest single discount</strong>.
-        In other words, this is a <strong>max-discount rule</strong>, not stacking.
+        Discounts are <strong>not cumulative</strong>. If a participant is
+        eligible for multiple discounts, the system applies only the{" "}
+        <strong>highest single discount</strong>. In other words, this is a{" "}
+        <strong>max-discount rule</strong>, not stacking.
       </p>
       <ul>
         <li>
-          <strong>Category A + IEEE:</strong> max(80%, 25%) = 80% → final <strong>$100.00</strong>
+          <strong>Category A + IEEE:</strong> max(80%, 25%) = 80% → final{" "}
+          <strong>$100.00</strong>
         </li>
         <li>
-          <strong>Category B + IEEE:</strong> max(50%, 25%) = 50% → final <strong>$250.00</strong>
+          <strong>Category B + IEEE:</strong> max(50%, 25%) = 50% → final{" "}
+          <strong>$250.00</strong>
         </li>
         <li>
-          <strong>No country discount + IEEE:</strong> max(0%, 25%) = 25% → final <strong>$375.00</strong>
+          <strong>No country discount + IEEE:</strong> max(0%, 25%) = 25% →
+          final <strong>$375.00</strong>
         </li>
       </ul>
 
@@ -62,9 +69,24 @@ export default function RegistrationFeesPage() {
       <h2>Eligibility and verification</h2>
       <p>
         Delegates claiming discounted categories should be prepared to provide
-        supporting information during registration. The organizing team may request
-        evidence for country-category eligibility and IEEE membership status before
-        final payment confirmation.
+        supporting information during registration. The organizing team may
+        request evidence for country-category eligibility and IEEE membership
+        status before final payment confirmation.
+      </p>
+
+      <h2>Research4Life country lists</h2>
+      <p>
+        Fee waivers are based on{" "}
+        <a
+          href="https://www.research4life.org/access/eligibility/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline text-icami-blue hover:text-icami-blue-bright"
+        >
+          Research4Life eligibility criteria
+        </a>
+        . Check the link to see if your country falls under Group A (80% waiver)
+        or Group B (50% waiver).
       </p>
 
       <h2>Payment, invoicing, and updates</h2>
