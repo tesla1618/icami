@@ -388,7 +388,7 @@ function FooterDeveloperCredit({ tone }) {
           >
             {name}
           </button>
-          .<br />A researcher at the{" "}
+          {/* .<br />A researcher at the{" "}
           <a
             href={labUrl}
             className={linkClass}
@@ -396,7 +396,7 @@ function FooterDeveloperCredit({ tone }) {
             target="_blank"
           >
             {affiliation}
-          </a>
+          </a> */}
           .
         </p>
         <p className={`mt-3 text-[0.75rem] sm:text-xs ${body}`}>
@@ -688,14 +688,14 @@ function FooterDeveloperCredit({ tone }) {
                       >
                         GitHub
                       </a>
-                      <a
+                      {/* <a
                         href={`${labUrl}/peopleDetailsView/rajieb`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="rounded-full border border-white/20 bg-white/8 px-4 py-1.5 text-xs font-semibold text-white/80 transition hover:border-white/40 hover:text-white"
                       >
                         AMIR Lab
-                      </a>
+                      </a> */}
                       <a
                         href="https://www.linkedin.com/in/imrajieb/"
                         target="_blank"
@@ -730,7 +730,13 @@ export function SiteFooter() {
         <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:grid-cols-3 sm:px-10 md:px-14">
           <div className="">
             <div className="font-heading text-xl tracking-[0.12em] text-white relative mb-32">
-              <Image src="https://cdn.icami.net/icami_nav_dark.svg" alt={site.shortTitle} width={300} height={24} className="absolute -left-[.64rem] top-0" />
+              <Image
+                src="https://cdn.icami.net/icami_nav_dark.svg"
+                alt={site.shortTitle}
+                width={300}
+                height={24}
+                className="absolute -left-[.64rem] top-0"
+              />
             </div>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-zinc-500">
               {site.fullTitle}
@@ -821,8 +827,14 @@ export function SiteFooter() {
       <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-3 sm:px-10 md:px-14">
         <div>
           <div className="font-heading text-xl tracking-[0.12em] text-white relative mb-32">
-              <Image src="https://cdn.icami.net/icami_nav.svg" alt={site.shortTitle} width={300} height={24} className="absolute -left-[.64rem] top-0" />
-            </div>
+            <Image
+              src="https://cdn.icami.net/icami_nav.svg"
+              alt={site.shortTitle}
+              width={300}
+              height={24}
+              className="absolute -left-[.64rem] top-0"
+            />
+          </div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-slate-600">
             {site.fullTitle}
           </p>
@@ -872,7 +884,10 @@ export function SiteFooter() {
           <ul className="mt-8 space-y-2 text-xs text-slate-500">
             {navMore.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="hover:text-slate-800 hover:underline hover:underline-offset-4 transition-colors">
+                <Link
+                  href={item.href}
+                  className="hover:text-slate-800 hover:underline hover:underline-offset-4 transition-colors"
+                >
                   {item.label}
                 </Link>
               </li>
