@@ -85,7 +85,7 @@ function MemberCard({ name, affiliation, label, emphasis = false }) {
 }
 
 export const metadata = {
-  title: "ICAMI 2026 : Organizing Committee Structure",
+  title: "ICAMI 2026 : Organizing Committee",
   description:
     "ICAMI 2026 organizing committee. General chairs, technical program committee, advisory board, and supporting roles.",
 };
@@ -93,48 +93,45 @@ export const metadata = {
 export default function OrganizingCommitteePage() {
   return (
     <DocumentPage
-      title="ICAMI 2026 : Organizing Committee Structure"
+      title="Meet the ICAMI 2026 Organizing Committee"
       eyebrow="People"
     >
-      <p>
+      {/* <p>
         ICAMI 2026 is organized by an international committee of academics and
         industry professionals drawn from leading institutions worldwide.
-        Affiliations are listed where available.
-      </p>
+        
+      </p> */}
 
-      <h2 className="mt-8">EXECUTIVE COMMITTEE</h2>
+      <h2 className="mt-8">GENERAL CHAIRS</h2>
       <div className="mt-4 grid grid-cols-1 gap-3 max-w-3xl">
         <MemberCard
-          label="General Chair"
+          
           emphasis
           name="Dr. Dunren Che"
           affiliation="School of Computing, Southern Illinois University, Carbondale, IL 62901, USA"
         />
         <MemberCard
-          label="General Chair"
+          
           emphasis
           name="Dr. Abu Asaduzzaman"
           affiliation="Professor and Associate Chair, College of Engineering, Electrical and Computer Engineering, Wichita State University (WSU), USA"
         />
-
+        <h2 className="mt-8">PROGRAM CHAIRS</h2>
         <MemberCard
-          label="Program Chair"
           name="Dr. M. Julius Hossain"
           affiliation="Head of Image and Data Analysis Group at the Centre for Cancer Immunology, University of Southampton, UK"
         />
         <MemberCard
-          label="Program Chair"
           name="Dr. Joseph Shin"
           affiliation="School of Computer Science and Engineering, The University of Aizu, Aizuwakamatsu, Japan"
         />
         <MemberCard
-          label="Program Chair"
           name="Md. Jakir Hossen"
           affiliation="Center for Advanced Analytics (CAA), COE for Artificial Intelligence, Faculty of Engineering & Technology (FET), Multimedia University, 75450 Melaka, Malaysia"
         />
       </div>
 
-      <h2 className="mt-10">Technical Program Committee</h2>
+      <h2 className="mt-10">Technical Program Committee Chairs</h2>
       <div className="mt-3 grid grid-cols-1 gap-3 max-w-3xl">
         <MemberCard
           name="Dr. Nilanjan Dey"
@@ -150,7 +147,7 @@ export default function OrganizingCommitteePage() {
         />
       </div>
 
-      <h2 className="mt-8">Area Chairs</h2>
+      <h2 className="mt-8">AREA/TRACK CHAIRS</h2>
       <div className="mt-3 grid grid-cols-1 gap-3 max-w-3xl">
         <MemberCard
           name="Dr. M. F. Mridha"
@@ -170,20 +167,20 @@ export default function OrganizingCommitteePage() {
         />
       </div>
 
-      <h2 className="mt-10">SPECIALIZED CHAIRS</h2>
+      <h2 className="mt-10">PUBLICATION CHAIRS</h2>
       <div className="mt-4 grid grid-cols-1 gap-3 max-w-3xl">
         <MemberCard
-          label="Publication Chair"
           name="Dr. Md Abdul Hamid"
           affiliation="King Abdulaziz University, Jeddah, Saudi Arabia"
         />
+      <h2 className="mt-10">FINANCE CHAIRS</h2>
         <MemberCard
-          label="Finance Chair"
           name="Dr. Muhammad Mostafa Monowar"
           affiliation="Faculty of Computing and Information Technology, King Abdulaziz University, Jeddah, Saudi Arabia"
         />
+      <h2 className="mt-10">PUBLICITY/COMMUNICATION CHAIRS</h2>
+
         <MemberCard
-          label="Publicity / Communication Chair"
           name="Dr. Md. Rashedul Islam"
           affiliation="Manager, Overseas AI group, Chowagiken, Japan,"
         />
@@ -192,19 +189,18 @@ export default function OrganizingCommitteePage() {
           name="Naziba Tasnim"
           affiliation="BS, Computer Science — BRAC University."
         /> */}
+      <h2 className="mt-10">INDUSTRY CHAIRS</h2>
+
         <MemberCard
-          label="Industry Chair"
           name="Dr. Md.Nahid Newaz"
           affiliation="Senior Solutions Architect - GPU @ NVIDIA, USA"
         />
         <MemberCard
-          label="Industry Chair"
           name="Dr. Nahid Anwar"
           affiliation="Senior Data Scientist at Walmart, USA"
         />
         <MemberCard
-          label="Industry Chair"
-          name="Md Habibur Rahman"
+          name="Dr. Md Habibur Rahman"
           affiliation="Postdoctoral Scholar, Qualcomm Institute, University of California, San Diego, CA"
         />
         {/* <MemberCard
@@ -214,20 +210,27 @@ export default function OrganizingCommitteePage() {
         /> */}
       </div>
 
-      <h2 className="mt-10">LOCAL ORGANIZATION</h2>
+      {/* <h2 className="mt-10">LOCAL ARRANGEMENTS CHAIRS</h2>
       <div className="mt-4 max-w-3xl rounded-2xl border border-slate-200/90 bg-white/70 p-5">
         <div className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
           Local Organizing Committee (MMU, Malaysia)
         </div>
         <div className="mt-2 text-slate-700">To be announced</div>
-      </div>
+      </div> */}
 
       <h2 className="mt-10">TECHNICAL PROGRAM COMMITTEE MEMBER</h2>
       <div className="mt-4 grid grid-cols-1 gap-3 max-w-3xl">
         <MemberCard
-          label="Technical Program Committee Member"
           name="Dr. Md. Rajibul Islam"
           affiliation="Department of Data Science & Engineering, Bangladesh University of Business and Technology (BUBT), Bangladesh"
+        />
+        <MemberCard
+          name="Md Nahid Hasan"
+          affiliation="University of Wisconsin-Milwaukee, Milwaukee, WI 53211, USA"
+        />
+        <MemberCard
+          name="Md Rakibul Islam"
+          affiliation="Department of Computer Science and Engineering, Mälardalens University,722 20 Västerås, Sweden"
         />
       </div>
 
