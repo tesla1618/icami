@@ -45,7 +45,7 @@ export function ConferenceHighlights() {
   return (
     <div>
       <p className="icami-mono-eyebrow mb-10 text-slate-500">01 — conference highlights</p>
-      <div className="grid gap-5 border-b border-slate-200/90 pb-20 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {pulse.map((item, i) => (
           <article key={item.title} className="icami-card group p-6">
             <div className="mb-4 flex items-center justify-between gap-3">
