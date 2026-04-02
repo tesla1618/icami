@@ -25,7 +25,7 @@ export function DatesSection() {
               />
             ) : null}
 
-            <div className="flex items-start justify-between gap-4">
+            <div className="flex items-start justify-between gap-4 h-12">
               <p className="icami-mono-eyebrow !text-slate-600">{row.label}</p>
               <span
                 className={`shrink-0 rounded-full border px-2.5 py-1 font-mono text-[0.62rem] font-semibold uppercase tracking-[0.2em] ${
