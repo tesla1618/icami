@@ -60,8 +60,8 @@ export function HeroSection() {
           className="mx-auto flex w-full max-w-7xl flex-col justify-between gap-4 h-full px-5 sm:px-8 lg:px-12 lg:pb-0"
           style={{ paddingBottom: "0" }}
         >
-          {/* ── Logo ── */}
-          <motion.div {...fade(0)} className="shrink-0 ">
+          {/* ── Logos ── */}
+          <motion.div {...fade(0)} className="shrink-0 flex flex-col gap-3">
             <Image
               id="hero-logo"
               src="/icami_nav_dark.svg"
@@ -71,6 +71,22 @@ export function HeroSection() {
               className="h-full w-full sm:h-auto sm:w-[clamp(9rem,28vw,26rem)] drop-shadow-[0_2px_24px_rgba(30,92,255,0.4)]"
               priority
             />
+            <div className="flex items-center gap-4 ml-5">
+              <Image
+                src="/ieee.png"
+                alt="IEEE"
+                width={90}
+                height={60}
+                className="h-8 w-auto sm:h-6 drop-shadow-lg"
+              />
+              <Image
+                src="/mmu.png"
+                alt="Multimedia University"
+                width={90}
+                height={60}
+                className="h-8 w-auto sm:h-6 drop-shadow-lg"
+              />
+            </div>
           </motion.div>
 
           {/* ── Main content ── */}
