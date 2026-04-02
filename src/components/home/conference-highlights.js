@@ -20,21 +20,14 @@ export function ConferenceHighlights() {
       tag: "Publication",
       body: (
         <>
-          <HighlightBrush variant="amber">Indexed</HighlightBrush> publication venue
-          to be announced.
+         Publications are scheduled for inclusion in the IEEE Xplore Digital Library. Approval is currently in progress.
         </>
       ),
     },
     {
-      title: "Applied focus",
-      tag: "Impact",
-      body: (
-        <>
-          Methods with{" "}
-          <HighlightBrush variant="gold">real-world evaluation</HighlightBrush> and
-          impact.
-        </>
-      ),
+      title: "Algorithmic Intelligence",
+      tag: "Innovation",
+      body: "A conference on theoretical and algorithmic foundations of artificial intelligence"
     },
     {
       title: "Host",
@@ -51,7 +44,7 @@ export function ConferenceHighlights() {
 
   return (
     <div>
-      <p className="icami-mono-eyebrow mb-10 text-slate-500">01 — conference pulse</p>
+      <p className="icami-mono-eyebrow mb-10 text-slate-500">01 — conference highlights</p>
       <div className="grid gap-5 border-b border-slate-200/90 pb-20 sm:grid-cols-2 lg:grid-cols-4">
         {pulse.map((item, i) => (
           <article key={item.title} className="icami-card group p-6">

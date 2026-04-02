@@ -18,17 +18,17 @@ export function TracksPreview() {
               <span className="icami-mono-eyebrow !text-slate-500">
                 Track {String(idx + 1).padStart(2, "0")}
               </span>
-              <span className="rounded-full border border-slate-200 bg-white/70 px-2.5 py-1 font-mono text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-slate-500">
+              {/* <span className="rounded-full border border-slate-200 bg-white/70 px-2.5 py-1 font-mono text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-slate-500">
                 Applied
-              </span>
+              </span> */}
             </div>
 
             <h3 className="font-heading text-2xl leading-[1.05] tracking-[0.06em] text-icami-text">
               {t.title}
             </h3>
-            <p className="mt-4 text-[0.98rem] leading-relaxed text-icami-text-muted">
+            {/* <p className="mt-4 text-[0.98rem] leading-relaxed text-icami-text-muted">
               {t.summary}
-            </p>
+            </p> */}
 
             <div className="mt-6 h-px w-full bg-gradient-to-r from-slate-200/90 via-slate-200/30 to-transparent" />
             <ul className="mt-5 flex flex-wrap gap-2 text-xs">

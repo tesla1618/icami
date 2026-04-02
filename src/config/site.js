@@ -29,26 +29,26 @@ export const site = {
 export const importantDates = [
   {
     label: "Submission deadline",
-    date: "July 2026",
+    date: "July 30, 2026",
     highlight: true,
-    linebreak: true
+    linebreak: false
   },
   {
     label: "Notification of acceptance",
-    date: "October 2026",
+    date: "October 15, 2026",
     highlight: true,
     linebreak: false
       
   },
   {
-    label: "Camera-ready deadline",
-    date: "November 2026",
+    label: "Registration & Camera-ready deadline",
+    date: "October 31, 2026",
     highlight: true,
     linebreak: false
   },
   {
     label: "Conference dates",
-    date: "December 2026",
+    date: "November 19-21, 2026",
     highlight: true,
     linebreak: false
   },
