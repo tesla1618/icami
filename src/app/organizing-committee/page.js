@@ -86,7 +86,8 @@ function MemberCard({ name, affiliation, label, emphasis = false }) {
 
 export const metadata = {
   title: "ICAMI 2026 : Organizing Committee Structure",
-  description: "ICAMI 2026 organizing committee. General chairs, technical program committee, advisory board, and supporting roles.",
+  description:
+    "ICAMI 2026 organizing committee. General chairs, technical program committee, advisory board, and supporting roles.",
 };
 
 export default function OrganizingCommitteePage() {
@@ -134,52 +135,44 @@ export default function OrganizingCommitteePage() {
         />
       </div>
 
-      <h2 className="mt-10">TECHNICAL LEADERSHIP</h2>
-      <h3 className="mt-4">Technical Program Committee (TPC) Chair</h3>
-      <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <h2 className="mt-10">Technical Program Committee</h2>
+      <div className="mt-3 grid grid-cols-1 gap-3 max-w-3xl">
         <MemberCard
-          label="TPC Chair"
           name="Dr. Nilanjan Dey"
           affiliation="Department of Computer Science and Engineering, Techno International New Town, Kolkata, India"
         />
         <MemberCard
-          label="TPC Chair"
           name="Dr. Yutaka Watanobe"
           affiliation="Department of Computer Science and Engineering, University of Aizu, Aizu-Wakamatsu 965-8580, Japan"
         />
         <MemberCard
-          label="TPC Chair"
           name="Dr. Salah Uddin Ahmed"
           affiliation="School of Business, University of South-Eastern Norway, Honefoss, Norway"
         />
       </div>
 
-      <h3 className="mt-8">Area Chairs</h3>
-      <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <h2 className="mt-8">Area Chairs</h2>
+      <div className="mt-3 grid grid-cols-1 gap-3 max-w-3xl">
         <MemberCard
-          label="Area Chair"
           name="Dr. M. F. Mridha"
           affiliation="Head of Department, Department of Computer Science, American International University - Bangladesh (AIUB)"
         />
         <MemberCard
-          label="Area Chair"
           name="Dr. Hanif Bhuiyan"
           affiliation="Performance & Analytics City of Gold Coast, Gold Coast, Australia"
         />
         <MemberCard
-          label="Area Chair"
           name="Dr. Zeyar Aung"
           affiliation="Department of Computer Science, Khalifa University, Abu Dhabi, United Arab Emirates"
         />
         <MemberCard
-          label="Area Chair"
           name="Dr. M M Manjurul Islam"
           affiliation="School of Computing, Engineering and Intelligent Systems at Ulster University, UK"
         />
       </div>
 
       <h2 className="mt-10">SPECIALIZED CHAIRS</h2>
-      <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-4 grid grid-cols-1 gap-3 max-w-3xl">
         <MemberCard
           label="Publication Chair"
           name="Dr. Md Abdul Hamid"
@@ -201,17 +194,17 @@ export default function OrganizingCommitteePage() {
           affiliation="BS, Computer Science — BRAC University."
         /> */}
         <MemberCard
-          label="Industry Chairs"
+          label="Industry Chair"
           name="Dr. Md.Nahid Newaz"
           affiliation="Senior Solutions Architect - GPU @ NVIDIA, USA"
         />
         <MemberCard
-          label="Industry Chairs"
+          label="Industry Chair"
           name="Dr. Nahid Anwar"
           affiliation="Senior Data Scientist at Walmart, USA"
         />
         <MemberCard
-          label="Industry Chairs"
+          label="Industry Chair"
           name="Md Habibur Rahman"
           affiliation="Postdoctoral Scholar, Qualcomm Institute, University of California, San Diego, CA"
         />
@@ -231,7 +224,7 @@ export default function OrganizingCommitteePage() {
       </div>
 
       <h2 className="mt-10">TECHNICAL PROGRAM COMMITTEE MEMBER</h2>
-      <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-4 grid grid-cols-1 gap-3 max-w-3xl">
         <MemberCard
           label="Technical Program Committee Member"
           name="Dr. Md. Rajibul Islam"
