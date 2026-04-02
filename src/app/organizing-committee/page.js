@@ -97,10 +97,9 @@ export default function OrganizingCommitteePage() {
       eyebrow="People"
     >
       <p>
-        ICAMI 2026 uses a clean academic governance model: executive leadership
-        sets direction, program and technical roles scale reviews, and an
-        advisory layer provides high-impact guidance. Member affiliations are
-        shown when available.
+        ICAMI 2026 is organized by an international committee of academics and
+        industry professionals drawn from leading institutions worldwide.
+        Affiliations are listed where available.
       </p>
 
       <h2 className="mt-8">EXECUTIVE COMMITTEE</h2>
