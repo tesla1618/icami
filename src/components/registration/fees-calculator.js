@@ -57,8 +57,8 @@ export function RegistrationFeeCalculator() {
               className="w-full rounded-md border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-800 outline-none transition focus:border-sky-500/70"
             >
               <option value="none">Not Category A/B (0%)</option>
-              <option value="a">Category A (80% off)</option>
-              <option value="b">Category B (50% off)</option>
+              <option value="a">Category A (80% waived)</option>
+              <option value="b">Category B (50% waived)</option>
             </select>
           </label>
 
