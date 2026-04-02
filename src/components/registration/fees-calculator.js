@@ -70,26 +70,26 @@ export function RegistrationFeeCalculator() {
               className="h-4 w-4"
             />
             <span className="text-sm text-slate-700">
-              IEEE member (25% discount)
+              IEEE member (25% waiver)
             </span>
           </label>
         </div>
 
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
           <div className="rounded-md border border-slate-200 bg-white p-4">
-            <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Country discount</p>
+            <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Country waiver</p>
             <p className="mt-2 text-lg font-semibold text-slate-900">
               {result.countryPct}% ({money((BASE_FEE_USD * result.countryPct) / 100)})
             </p>
           </div>
           <div className="rounded-md border border-slate-200 bg-white p-4">
-            <p className="text-xs uppercase tracking-[0.16em] text-slate-500">IEEE discount</p>
+            <p className="text-xs uppercase tracking-[0.16em] text-slate-500">IEEE waiver</p>
             <p className="mt-2 text-lg font-semibold text-slate-900">
               {result.ieeePct}% ({money((BASE_FEE_USD * result.ieeePct) / 100)})
             </p>
           </div>
           <div className="rounded-md border border-slate-200 bg-white p-4">
-            <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Applied discount (max rule)</p>
+            <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Applied waiver (max rule)</p>
             <p className="mt-2 text-lg font-semibold text-slate-900">
               {result.appliedPct}% ({money(result.appliedDiscount)})
             </p>
@@ -101,8 +101,8 @@ export function RegistrationFeeCalculator() {
         </div>
 
         <p className="mt-5 text-xs leading-relaxed text-slate-500">
-          New rule: discounts are not stacked. If multiple discounts apply, only the highest single
-          discount is used.
+          New rule: waivers are not stacked. If multiple waivers apply, only the highest single
+          waiver is used.
         </p>
       </div>
     </section>

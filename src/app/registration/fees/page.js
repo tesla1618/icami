@@ -22,12 +22,12 @@ export default function RegistrationFeesPage() {
           <strong>Standard registration base fee:</strong> <strong>$500</strong>
         </li>
         <li>
-          All published discounts are applied against this base according to the
+          All published waivers are applied against this base according to the
           policy below.
         </li>
       </ul>
 
-      <h2>Discount policy</h2>
+      <h2>Waiver policy</h2>
       <ul>
         <li>
           <strong>Research4Life Category A countries:</strong>{" "}
@@ -42,24 +42,24 @@ export default function RegistrationFeesPage() {
         </li>
       </ul>
 
-      <h2>How discounts are applied</h2>
+      <h2>How waivers are applied</h2>
       <p>
-        Discounts are <strong>not cumulative</strong>. If a participant is
-        eligible for multiple discounts, the system applies only the{" "}
-        <strong>highest single discount</strong>. In other words, this is a{" "}
-        <strong>max-discount rule</strong>, not stacking.
+        Waivers are <strong>not cumulative</strong>. If a participant is
+        eligible for multiple waivers, the system applies only the{" "}
+        <strong>highest single waiver</strong>. In other words, this is a{" "}
+        <strong>max-waiver  rule</strong>, not stacking.
       </p>
       <ul>
         <li>
           <strong>Category A + IEEE:</strong> max(80%, 25%) = 80% → final{" "}
-          <strong>$100.00</strong>
+          <strong>$100.00</strong>  
         </li>
         <li>
           <strong>Category B + IEEE:</strong> max(50%, 25%) = 50% → final{" "}
           <strong>$250.00</strong>
         </li>
         <li>
-          <strong>No country discount + IEEE:</strong> max(0%, 25%) = 25% →
+          <strong>No country waiver + IEEE:</strong> max(0%, 25%) = 25% →
           final <strong>$375.00</strong>
         </li>
       </ul>
@@ -68,7 +68,7 @@ export default function RegistrationFeesPage() {
 
       <h2>Eligibility and verification</h2>
       <p>
-        Delegates claiming discounted categories should be prepared to provide
+        Delegates claiming waived categories should be prepared to provide
         supporting information during registration. The organizing team may
         request evidence for country-category eligibility and IEEE membership
         status before final payment confirmation.
