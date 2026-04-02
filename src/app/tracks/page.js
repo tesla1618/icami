@@ -19,7 +19,7 @@ export default function TracksPage() {
             <h2 className="mt-1 text-xl tracking-wide text-icami-text">
               {t.title}
             </h2>
-            <p className="mt-3 text-icami-text-muted">{t.summary}</p>
+            {/* <p className="mt-3 text-icami-text-muted">{t.summary}</p> */}
             <p className="mt-4 text-sm font-medium text-icami-text">
               Focus areas
             </p>
