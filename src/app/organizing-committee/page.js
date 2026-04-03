@@ -105,13 +105,11 @@ export default function OrganizingCommitteePage() {
       <h2 className="mt-8">GENERAL CHAIRS</h2>
       <div className="mt-4 grid grid-cols-1 gap-3 max-w-3xl">
         <MemberCard
-          
           emphasis
           name="Dr. Dunren Che"
           affiliation="School of Computing, Southern Illinois University, Carbondale, IL 62901, USA"
         />
         <MemberCard
-          
           emphasis
           name="Dr. Abu Asaduzzaman"
           affiliation="Professor and Associate Chair, College of Engineering, Electrical and Computer Engineering, Wichita State University (WSU), USA"
@@ -151,7 +149,7 @@ export default function OrganizingCommitteePage() {
       <div className="mt-3 grid grid-cols-1 gap-3 max-w-3xl">
         <MemberCard
           name="Dr. M. F. Mridha"
-          affiliation="Head of Department, Department of Computer Science, American International University - Bangladesh (AIUB)"
+          affiliation="Head of Department, Department of Computer Science, American International University - Bangladesh (AIUB), Dhaka, Bangladesh"
         />
         <MemberCard
           name="Dr. Hanif Bhuiyan"
@@ -173,12 +171,12 @@ export default function OrganizingCommitteePage() {
           name="Dr. Md Abdul Hamid"
           affiliation="King Abdulaziz University, Jeddah, Saudi Arabia"
         />
-      <h2 className="mt-10">FINANCE CHAIRS</h2>
+        <h2 className="mt-10">FINANCE CHAIRS</h2>
         <MemberCard
           name="Dr. Muhammad Mostafa Monowar"
           affiliation="Faculty of Computing and Information Technology, King Abdulaziz University, Jeddah, Saudi Arabia"
         />
-      <h2 className="mt-10">PUBLICITY/COMMUNICATION CHAIRS</h2>
+        <h2 className="mt-10">PUBLICITY/COMMUNICATION CHAIRS</h2>
 
         <MemberCard
           name="Dr. Md. Rashedul Islam"
@@ -189,7 +187,7 @@ export default function OrganizingCommitteePage() {
           name="Naziba Tasnim"
           affiliation="BS, Computer Science — BRAC University."
         /> */}
-      <h2 className="mt-10">INDUSTRY CHAIRS</h2>
+        <h2 className="mt-10">INDUSTRY CHAIRS</h2>
 
         <MemberCard
           name="Dr. Md.Nahid Newaz"
