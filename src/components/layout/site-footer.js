@@ -205,6 +205,7 @@ function FooterDeveloperCredit({ tone }) {
   const [overlayVisible, setOverlayVisible] = useState(false);
   const [blackOpaque, setBlackOpaque] = useState(false);
   const [textVisible, setTextVisible] = useState(false);
+  const [introLine, setIntroLine] = useState(0);
   // phase: 'idle' | 'building' | 'full' | 'fadeout' | 'profile'
   const [phase, setPhase] = useState("idle");
   const [groupIdx, setGroupIdx] = useState(0);
@@ -299,6 +300,7 @@ function FooterDeveloperCredit({ tone }) {
     setOverlayVisible(true);
     setBlackOpaque(false);
     setTextVisible(false);
+    setIntroLine(0);
     setPhase("idle");
     setGroupIdx(0);
     setRevealed(0);
@@ -307,8 +309,14 @@ function FooterDeveloperCredit({ tone }) {
     setOverwriteChars(0);
 
     sched(() => setBlackOpaque(true), 20);
-    sched(() => setTextVisible(true), 800);
-    sched(() => setTextVisible(false), 3600);
+    sched(() => {
+      setIntroLine(1);
+      setTextVisible(true);
+    }, 800);
+    sched(() => setTextVisible(false), 3400);
+    sched(() => setIntroLine(2), 5200);
+    sched(() => setTextVisible(true), 5400);
+    sched(() => setTextVisible(false), 8000);
 
     const IMG_GAP = 1500; // ms between images in a group
     const CAP_DELAY = 600; // caption pops in after image settles
@@ -338,7 +346,7 @@ function FooterDeveloperCredit({ tone }) {
     };
 
     // 7 groups following the exact script sequence.
-    const t1 = schedGroup(0, 1, 5000); // "Well, it was me."
+    const t1 = schedGroup(0, 1, 10000); // "Well, it was me."
     const t2 = schedGroup(1, 1, t1); // "I am Komolakanto."
     const t3 = schedGroup(2, 1, t2); // "I'm a senior architect..."
     const t4 = schedGroup(3, 2, t3); // "You may be thinking..." + "For legal reason..."
@@ -358,6 +366,7 @@ function FooterDeveloperCredit({ tone }) {
     clearTimers();
     setBlackOpaque(false);
     setTextVisible(false);
+    setIntroLine(0);
     setPhase("idle");
     setCaptionRevealed(0);
     setProfileStep(0);
@@ -380,14 +389,17 @@ function FooterDeveloperCredit({ tone }) {
         </p>
         <p className={`text-[0.8125rem] leading-relaxed sm:text-sm ${body}`}>
           This conference website is architected, deployed, and maintained by{" "}
-          <button
-            type="button"
-            onClick={triggerKomolakantoEasterEgg}
+          <a
+            href="https://rajieb.dev"
+            onClick={(e) => {
+              e.preventDefault();
+              triggerKomolakantoEasterEgg();
+            }}
             className={`${linkClass} touch-manipulation inline-flex items-center`}
             style={{ touchAction: "manipulation", minHeight: "44px" }}
           >
             {name}
-          </button>
+          </a>
           {/* .<br />A researcher at the{" "}
           <a
             href={labUrl}
@@ -420,25 +432,32 @@ function FooterDeveloperCredit({ tone }) {
             blackOpaque ? "opacity-100" : "opacity-0"
           }`}
         >
-          {/* Close button — always reachable */}
-          <button
-            type="button"
-            onClick={closeKomolakantoEasterEgg}
-            className="absolute right-4 top-4 z-10 cursor-pointer rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white/90 transition hover:bg-white/20"
-          >
-            Close
-          </button>
+          {/* Close button — appears with animation when Rajieb's info shows */}
+          {phase === "profile" && profileStep === 1 ? (
+            <button
+              type="button"
+              onClick={closeKomolakantoEasterEgg}
+              className="absolute right-4 top-4 z-10 cursor-pointer rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white/90 transition hover:bg-white/20"
+              style={{
+                animation:
+                  "komo-reveal-bottom 0.6s cubic-bezier(0.22,1,0.36,1) both",
+              }}
+            >
+              Close
+            </button>
+          ) : null}
 
-          {/* Intro text */}
+          {/* Intro text — shown one line at a time */}
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
             <p
               className={`px-6 text-center text-[clamp(1.4rem,3.6vw,3rem)] font-semibold tracking-[0.02em] text-white transition-opacity duration-[1800ms] ${
                 textVisible ? "opacity-100" : "opacity-0"
               }`}
             >
-              Every late-night commit had a witness.
-              <br />
-              You are about to meet him.
+              {introLine === 1
+                ? "Every late-night commit had a witness."
+                : null}
+              {introLine === 2 ? "You are about to meet him." : null}
             </p>
           </div>
 
@@ -688,14 +707,14 @@ function FooterDeveloperCredit({ tone }) {
                       >
                         GitHub
                       </a>
-                      {/* <a
-                        href={`${labUrl}/peopleDetailsView/rajieb`}
+                      <a
+                        href="https://rajieb.dev"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="rounded-full border border-white/20 bg-white/8 px-4 py-1.5 text-xs font-semibold text-white/80 transition hover:border-white/40 hover:text-white"
                       >
-                        AMIR Lab
-                      </a> */}
+                        Website
+                      </a>
                       <a
                         href="https://www.linkedin.com/in/imrajieb/"
                         target="_blank"
@@ -708,6 +727,27 @@ function FooterDeveloperCredit({ tone }) {
                   ) : null}
                 </div>
               ) : null}
+            </div>
+          ) : null}
+          {phase === "profile" ? (
+            <div
+              className="absolute inset-x-0 bottom-6 z-10 flex justify-center"
+              style={{
+                animation:
+                  "komo-reveal-bottom 1s 0.8s cubic-bezier(0.22,1,0.36,1) both",
+              }}
+            >
+              <p className="text-xs tracking-[0.14em] text-white/40">
+                a presentation by{" "}
+                <a
+                  href="https://rajieb.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/60 underline decoration-white/20 transition hover:text-white/90 hover:decoration-white/50"
+                >
+                  rajieb.dev
+                </a>
+              </p>
             </div>
           ) : null}
         </div>
@@ -742,10 +782,25 @@ export function SiteFooter() {
               {site.fullTitle}
             </p>
             <p className="mt-5 flex items-center gap-2 text-sm text-zinc-600">
-              <span
-                className="inline-block h-1.5 w-1.5 rounded-full bg-gradient-to-br from-icami-blue to-amber-500 shadow-[0_0_12px_rgba(30,92,255,0.6)]"
+              <svg
+                className="h-4 w-4 shrink-0 -mt-1 text-icami-blue"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={1.8}
                 aria-hidden
-              />
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                />
+              </svg>
               {site.location}
             </p>
           </div>
