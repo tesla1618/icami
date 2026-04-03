@@ -4,57 +4,58 @@ import { site } from "@/config/site";
 
 export const metadata = {
   title: "Venue",
-  description: "ICAMI 2026 venue at Multimedia University (MMU), Malaysia. Location details, travel tips, and accommodation information.",
+  description:
+    "ICAMI 2026 venue at Multimedia University (MMU), Malaysia. Location details, travel tips, and accommodation information.",
 };
 
 export default function VenuePage() {
   return (
     <DocumentPage title="Venue & travel" eyebrow="Location">
       <p>
-        ICAMI 2026 will be hosted at <strong>{site.location}</strong>. MMU offers
-        modern facilities suitable for plenary sessions, parallel tracks, and
-        informal collaboration.
+        ICAMI 2026 will be hosted at <strong>{site.location}</strong>. MMU
+        offers modern facilities suitable for plenary sessions, parallel tracks,
+        and informal collaboration.
       </p>
 
       <div className="mt-10 grid gap-4 md:grid-cols-12">
         <figure className="icami-chamfer-panel relative overflow-hidden border border-slate-200/90 bg-white md:col-span-7">
           <Image
-            src="https://cdn.icami.net/mmu1.jpg"
-            alt="Multimedia University (MMU) campus"
+            src={site.venue.images[0].src}
+            alt={site.venue.images[0].alt}
             width={1400}
             height={900}
-            className="h-72 w-full object-cover sm:h-80"
+            className="h-full w-full object-cover"
             priority={false}
           />
           <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent px-5 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-white/90">
-            Multimedia University (MMU)
+            {site.venue.images[0].caption}
           </figcaption>
         </figure>
 
         <div className="grid gap-4 md:col-span-5">
           <figure className="icami-chamfer-panel relative overflow-hidden border border-slate-200/90 bg-white">
             <Image
-              src="https://cdn.icami.net/malacca.jpg"
-              alt="Malacca city view"
+              src={site.venue.images[1].src}
+              alt={site.venue.images[1].alt}
               width={1200}
               height={800}
               className="h-40 w-full object-cover sm:h-44"
             />
             <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent px-5 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-white/90">
-              Malacca, Malaysia
+              {site.venue.images[1].caption}
             </figcaption>
           </figure>
 
           <figure className="icami-chamfer-panel relative overflow-hidden border border-slate-200/90 bg-white">
             <Image
-              src="https://cdn.icami.net/malacca2.webp"
-              alt="Malacca city atmosphere"
+              src={site.venue.images[2].src}
+              alt={site.venue.images[2].alt}
               width={1200}
               height={800}
               className="h-40 w-full object-cover sm:h-44"
             />
             <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent px-5 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-white/90">
-              Old town + waterfront
+              {site.venue.images[2].caption}
             </figcaption>
           </figure>
         </div>
