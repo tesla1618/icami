@@ -4,23 +4,23 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { HighlightBrush } from "@/components/ui/highlight-brush";
 import { site } from "@/config/site";
 
-const venueImages = [
-  {
-    src: "https://cdn.icami.net/mmu1.jpg",
-    alt: "Multimedia University (MMU) campus",
-    caption: "Multimedia University (MMU)",
-  },
-  {
-    src: "https://cdn.icami.net/malacca.jpg",
-    alt: "Malacca city view",
-    caption: "Malacca, Malaysia",
-  },
-  {
-    src: "https://cdn.icami.net/malacca2.webp",
-    alt: "Malacca city atmosphere",
-    caption: "Old town + waterfront",
-  },
-];
+// const venueImages = [
+//   {
+//     src: "https://cdn.icami.net/mmu1.jpg",
+//     alt: "Multimedia University (MMU) campus",
+//     caption: "Multimedia University (MMU)",
+//   },
+//   {
+//     src: "https://cdn.icami.net/malacca.jpg",
+//     alt: "Malacca city view",
+//     caption: "Malacca, Malaysia",
+//   },
+//   {
+//     src: "https://cdn.icami.net/malacca2.webp",
+//     alt: "Malacca city atmosphere",
+//     caption: "Old town + waterfront",
+//   },
+// ];
 
 export function VenuePreview() {
   return (
@@ -30,20 +30,20 @@ export function VenuePreview() {
         <div className="grid gap-4 sm:grid-cols-2">
           <figure className="icami-chamfer-panel relative overflow-hidden border border-slate-200/90 bg-white shadow-[0_24px_60px_-28px_rgba(15,23,42,0.28)]">
             <Image
-              src={venueImages[0].src}
-              alt={venueImages[0].alt}
+              src={site.venue.images[0].src}
+              alt={site.venue.images[0].alt}
               width={1200}
               height={800}
-              className="h-64 w-full object-cover sm:h-72"
+              className="h-64 w-full object-cover sm:h-full"
               priority={false}
             />
             <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent px-4 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/90">
-              {venueImages[0].caption}
+              {site.venue.images[0].caption}
             </figcaption>
           </figure>
 
           <div className="grid gap-4">
-            {venueImages.slice(1).map((img) => (
+            {site.venue.images.slice(1).map((img) => (
               <figure
                 key={img.src}
                 className="icami-chamfer-panel relative overflow-hidden border border-slate-200/90 bg-white shadow-[0_18px_48px_-28px_rgba(15,23,42,0.22)]"
