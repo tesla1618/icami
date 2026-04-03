@@ -251,7 +251,7 @@ function SiteHeaderInner() {
               tabIndex={transparent ? -1 : undefined}
             >
               <Image
-                src="https://cdn.icami.net/icami_nav.svg"
+                src={site.logo.light}
                 alt=""
                 width={70}
                 height={70}
@@ -302,7 +302,7 @@ function SiteHeaderInner() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/icami_nav_dark.svg"
+            src={site.logo.dark}
             alt=""
             width={480}
             height={240}
