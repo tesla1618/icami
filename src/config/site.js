@@ -9,7 +9,11 @@ export const site = {
   fullTitle: "International Conference on Advanced Machine Intelligence",
   location: "Multimedia University (MMU), Malaysia",
   tagline: "Advancing Intelligent Systems for Real-World Impact",
-  contactEmail: "contact@icami.net",
+  logo: {
+    light: "https://cdn.icami.net/icami_nav.svg",
+    dark: "https://cdn.icami.net/icami_nav_dark.svg",
+    favicon: "https://cdn.icami.net/favicon.png",
+  },
   social: {
     linkedin: "https://www.linkedin.com/",
     twitter: "https://twitter.com/",
@@ -22,6 +26,39 @@ export const site = {
     githubUrl: "https://github.com/tesla1618",
     affiliation: "Advanced Machine Intelligence Research Lab",
     labUrl: "https://amirl.org",
+    websiteUrl: "https://rajieb.dev",
+  },
+
+  contact: {
+    general: "chair@icami.net",
+    technical: "tech@icami.net",
+    registration: "reg@icami.net",
+    information: "info@icami.net",
+    other: "contact@icami.net",
+  },
+
+  venue: {
+    name: "Multimedia University (MMU)",
+    address: "Jalan Multimedia, Cyberjaya, Selangor, Malaysia",
+    mapUrl:
+      "https://www.google.com/maps/place/Multimedia+University/@3.161578,101.703457,17z/data=!3m1!4b1!4m6!3m5!1s0x31cc49b294624471:0x586a4d68d6494d0e!8m2!3d3.161578!4d101.703457!16s%2Fg%2F11c402xjpv?entry=ttu&g_ep=EgoyMDI2MDIwMi4wIKXMDSoASAFQAw%3D%3D",
+    images: [
+      {
+        src: "https://cdn.icami.net/venue/v1.jpg",
+        alt: "Melaka River from Tan Kim Seng Bridge",
+        caption: "Melaka River from Tan Kim Seng Bridge",
+      },
+      {
+        src: "https://cdn.icami.net/venue/v2.jpg",
+        alt: "Malacca city view",
+        caption: "Malacca, Malaysia",
+      },
+      {
+        src: "https://cdn.icami.net/venue/v3.jpg",
+        alt: "Multimedia University (MMU) campus",
+        caption: "Multimedia University (MMU) campus",
+      },
+    ],
   },
 };
 
@@ -31,26 +68,25 @@ export const importantDates = [
     label: "Submission deadline",
     date: "July 30, 2026",
     highlight: true,
-    linebreak: false
+    linebreak: false,
   },
   {
     label: "Notification of acceptance",
     date: "October 15, 2026",
     highlight: true,
-    linebreak: false
-      
+    linebreak: false,
   },
   {
     label: "Registration & Camera-ready deadline",
     date: "October 31, 2026",
     highlight: true,
-    linebreak: false
+    linebreak: false,
   },
   {
     label: "Conference dates",
     date: "November 19-21, 2026",
     highlight: true,
-    linebreak: false
+    linebreak: false,
   },
 ];
 
