@@ -670,12 +670,14 @@ html {
     border-color 0.25s ease;
 }
 
-.icami-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(0, 51, 160, 0.26);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 1) inset,
-    0 20px 52px -14px rgba(0, 51, 160, 0.26);
+@media (hover: hover) and (pointer: fine) {
+  .icami-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(0, 51, 160, 0.26);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 1) inset,
+      0 20px 52px -14px rgba(0, 51, 160, 0.26);
+  }
 }
 
 .icami-card-highlight {
@@ -690,11 +692,13 @@ html {
     0 16px 48px -14px rgba(201, 162, 39, 0.22);
 }
 
-.icami-card-highlight:hover {
-  border-color: rgba(201, 162, 39, 0.5);
-  box-shadow:
-    0 0 0 1px rgba(201, 162, 39, 0.15),
-    0 22px 52px -12px rgba(201, 162, 39, 0.28);
+@media (hover: hover) and (pointer: fine) {
+  .icami-card-highlight:hover {
+    border-color: rgba(201, 162, 39, 0.5);
+    box-shadow:
+      0 0 0 1px rgba(201, 162, 39, 0.15),
+      0 22px 52px -12px rgba(201, 162, 39, 0.28);
+  }
 }
 
 /* Prose-like defaults inside content panels */
