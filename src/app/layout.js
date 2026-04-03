@@ -42,7 +42,7 @@ export const metadata = {
   },
   description: `${site.fullTitle}. ${site.location}. ${site.tagline}`,
   icons: {
-    icon: "/icami.png",
+    icon: site.logo.favicon,
   },
   openGraph: {
     type: "website",
