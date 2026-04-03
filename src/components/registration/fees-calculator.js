@@ -7,6 +7,7 @@ const BASE_FEE_USD = 500;
 const COUNTRY_DISCOUNT = {
   none: 0,
   a: 80,
+  saarc: 80,
   b: 50,
 };
 
@@ -49,16 +50,17 @@ export function RegistrationFeeCalculator() {
         <div className="mt-5 grid gap-4 md:grid-cols-2">
           <label className="block">
             <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-slate-600">
-              Research4Life country category
+              Country category
             </span>
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
               className="w-full rounded-md border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-800 outline-none transition focus:border-sky-500/70"
             >
-              <option value="none">Not Category A/B (0%)</option>
-              <option value="a">Category A (80% waived)</option>
-              <option value="b">Category B (50% waived)</option>
+              <option value="none">Not eligible (0%)</option>
+              <option value="a">Research4Life Category A (80% waived)</option>
+              <option value="saarc">SAARC member country (80% waived)</option>
+              <option value="b">Research4Life Category B (50% waived)</option>
             </select>
           </label>
 
