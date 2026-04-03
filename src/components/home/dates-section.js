@@ -10,7 +10,7 @@ export function DatesSection() {
         actionHref="/important-dates"
         actionLabel="Full timeline"
       />
-      <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-h-24">
+      <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {importantDates.map((row) => (
           <li
             key={row.label}
