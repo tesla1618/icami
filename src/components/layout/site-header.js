@@ -173,26 +173,23 @@ function SiteHeaderInner() {
       travelEl.style.left = `${x}px`;
       travelEl.style.width = `${w}px`;
 
-      // Traveling logo opacity: hidden at rest, visible during travel, fades past arrival
+      // instant swap (both at same position at raw=0) that feels smooth as fucking hell
+      heroEl.style.opacity = String(Math.max(0, 1 - raw * 20));
+
+      // appears instantly when scroll starts, fades out as nav logo takes over
       let travelOp;
       if (raw <= 0) {
         travelOp = 0;
-      } else if (raw < 1) {
-        travelOp = 1;
+      } else if (raw < 0.82) {
+        travelOp = Math.min(1, raw * 20);
       } else {
-        // Fade out over 30px past threshold so it cross-fades with the nav logo
-        travelOp = Math.max(0, 1 - (rawUnclamped - 1) * 3);
+        travelOp = Math.max(0, 1 - (raw - 0.82) / 0.18);
       }
       travelEl.style.opacity = String(travelOp);
 
-      // Drop shadow fades as logo shrinks toward navbar
       travelEl.style.filter = `drop-shadow(0 2px 24px rgba(30,92,255,${(0.4 * (1 - t)).toFixed(3)}))`;
 
-      // Fade out the actual hero logo so it doesn't double up
-      heroEl.style.opacity = String(Math.max(0, 1 - raw * 2.5));
-
-      // Trigger header solid state slightly before full arrival for smooth cross-fade
-      const arrived = raw >= 0.92;
+      const arrived = raw >= 0.82;
       if (arrived !== prevArrived) {
         prevArrived = arrived;
         setHomeScrolled(arrived);
@@ -244,7 +241,7 @@ function SiteHeaderInner() {
           {/* Nav logo slot — always occupies space, opacity controlled by state */}
           <div
             ref={navLogoRef}
-            className={`shrink-0 transition-opacity duration-150 ${
+            className={`shrink-0 transition-opacity duration-300 ease-out ${
               transparent ? "opacity-0 pointer-events-none" : "opacity-100"
             }`}
           >
