@@ -4,17 +4,13 @@ import { importantDates } from "@/config/site";
 
 export const metadata = {
   title: "Important Dates",
-  description: "ICAMI 2026 important dates. Paper submission deadline July 2026, notification October 2026, conference December 2026.",
+  description:
+    "ICAMI 2026 important dates. Paper submission deadline July 2026, notification October 2026, conference December 2026.",
 };
 
 export default function ImportantDatesPage() {
   return (
     <DocumentPage title="Important dates" eyebrow="Plan ahead">
-      <p>
-        Official <HighlightBrush variant="sky">deadlines</HighlightBrush> for ICAMI
-        2026 are listed below. Month-level dates are currently published; exact day
-        cutoffs and timestamps will be shared with the submission system notice.
-      </p>
       <ol className="mt-10 space-y-6">
         {importantDates.map((row, i) => (
           <li
@@ -26,7 +22,9 @@ export default function ImportantDatesPage() {
             </span>
             <span
               className={
-                row.highlight ? "text-lg font-semibold text-icami-gold" : "text-icami-text"
+                row.highlight
+                  ? "text-lg font-semibold text-icami-gold"
+                  : "text-icami-text"
               }
             >
               {row.date}
