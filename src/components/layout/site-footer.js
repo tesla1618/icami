@@ -771,7 +771,7 @@ export function SiteFooter() {
           <div className="">
             <div className="font-heading text-xl tracking-[0.12em] text-white relative mb-32">
               <Image
-                src="https://cdn.icami.net/icami_nav_dark.svg"
+                src={site.logo.dark}
                 alt={site.shortTitle}
                 width={300}
                 height={24}
@@ -883,7 +883,7 @@ export function SiteFooter() {
         <div>
           <div className="font-heading text-xl tracking-[0.12em] text-white relative mb-32">
             <Image
-              src="https://cdn.icami.net/icami_nav.svg"
+              src={site.logo.light}
               alt={site.shortTitle}
               width={300}
               height={24}
@@ -913,10 +913,10 @@ export function SiteFooter() {
         <div>
           <p className="icami-mono-eyebrow text-slate-500">Contact</p>
           <a
-            href={`mailto:${site.contactEmail}`}
+            href={`mailto:${site.contact.other}`}
             className="mt-5 inline-block text-sm text-icami-blue transition-colors hover:text-sky-700"
           >
-            {site.contactEmail}
+            {site.contact.other}
           </a>
           <div className="mt-8 flex flex-wrap gap-6 text-sm">
             <a
