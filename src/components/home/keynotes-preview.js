@@ -1,16 +1,9 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 import Image from "next/image";
-import { keynotesHomePreviewCount } from "@/config/site";
+import { keynotes, keynotesHomePreviewCount } from "@/config/site";
 
 export function KeynotesPreview() {
-  // Keynote roster is temporarily TBA.
-  const preview = Array.from({ length: keynotesHomePreviewCount }, (_, i) => ({
-    name: "TBA",
-    affiliation: "TBA",
-    talkTitle: "TBA",
-    image: null,
-    _idx: i,
-  }));
+  const preview = keynotes.slice(0, keynotesHomePreviewCount);
 
   return (
     <section className="scroll-mt-8">
