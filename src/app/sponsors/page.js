@@ -1,4 +1,5 @@
 import { DocumentPage } from "@/components/page/document-page";
+import { SponsorGroupsList } from "@/components/sponsors/sponsor-groups-list";
 
 export const metadata = {
   title: "Sponsors",
@@ -18,10 +19,8 @@ export default function SponsorsPage() {
         in the site footer.
       </p>
 
-      <div className="mt-10 icami-card flex items-center justify-center py-20 text-center">
-        <p className="font-mono text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
-          TBA
-        </p>
+      <div className="mt-10 not-prose">
+        <SponsorGroupsList />
       </div>
     </DocumentPage>
   );
