@@ -64,7 +64,7 @@ export function VenuePreview() {
         </div>
         <div>
           <p className="text-[1.05rem] leading-relaxed text-icami-text-muted">
-            ICAMI 2026 will be held at{" "}
+            ICAMI 2027 will be held at{" "}
             <HighlightBrush variant="sky" className="font-medium">
               {site.location}
             </HighlightBrush>
