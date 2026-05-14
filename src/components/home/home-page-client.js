@@ -41,10 +41,10 @@ export function HomePageClient({ announcements }) {
           <DatesSection />
         </SectionMotion>
         <SectionMotion>
-          <AnnouncementsPreview items={announcements} />
+          <TracksPreview />
         </SectionMotion>
         <SectionMotion>
-          <TracksPreview />
+          <AnnouncementsPreview items={announcements} />
         </SectionMotion>
         <SectionMotion>
           <KeynotesPreview />
