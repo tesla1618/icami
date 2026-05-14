@@ -271,36 +271,13 @@ export const tracksHomePreviewCount = 4;
  * Replace with confirmed invited speakers as invitations finalize.
  */
 export const keynotes = [
-  {
-    name: "Prof. Dr. Mohammad Firoz Mridha",
-    affiliation:
-      "Professor & Head, Department of CSE, American International University-Bangladesh (AIUB)",
-    talkTitle: "Keynote title to be announced",
-    image: "https://cdn.icami.net/speakers/dmfm.png",
-  },
-  {
-    name: "Prof. Dr. Jungpil Shin",
-    affiliation:
-      "Professor, Department of Computer Science, University of Aizu, Japan",
-    talkTitle: "Keynote title to be announced",
-    image: "https://cdn.icami.net/speakers/shin.jpg",
-  },
-  {
-    name: "Prof. Dr. Muhammad Mostofa Monwar",
-    affiliation: "Professor, Department of IT, King Abdulaziz University",
-    talkTitle: "Keynote title to be announced",
-    image: "https://cdn.icami.net/speakers/mostofa.jpeg",
-  },
-  {
-    name: "Prof. Dr. Md. Abdul Hamid",
-    affiliation: "Professor, Department of IT, King Abdulaziz University",
-    talkTitle: "Keynote title to be announced",
-  },
+  
   {
     name: "Dr. Nilanjan Dey",
     affiliation:
-      "Professor, Department of Computer Science, Techno International New Town",
+      "Professor, Department of Computer Science, Techno International New Town, Kolkata, India",
     talkTitle: "Keynote title to be announced",
+    image: "https://cdn.icami.net/speakers/nilanjan.jpg",
   },
 ];
 
