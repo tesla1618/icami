@@ -110,9 +110,8 @@ export default function OrganizingCommitteePage() {
           affiliation="School of Computing, Southern Illinois University, Carbondale, IL 62901, USA"
         />
         <MemberCard
-          emphasis
-          name="Dr. Abu Asaduzzaman"
-          affiliation="Professor and Associate Chair, College of Engineering, Electrical and Computer Engineering, Wichita State University (WSU), USA"
+          name="Dr. Joseph Shin"
+          affiliation="School of Computer Science and Engineering, The University of Aizu, Aizuwakamatsu, Japan"
         />
         <h2 className="mt-8">PROGRAM CHAIRS</h2>
         <MemberCard
@@ -120,8 +119,9 @@ export default function OrganizingCommitteePage() {
           affiliation="Head of Image and Data Analysis Group at the Centre for Cancer Immunology, University of Southampton, UK"
         />
         <MemberCard
-          name="Dr. Joseph Shin"
-          affiliation="School of Computer Science and Engineering, The University of Aizu, Aizuwakamatsu, Japan"
+          emphasis
+          name="Dr. Abu Asaduzzaman"
+          affiliation="Professor and Associate Chair, College of Engineering, Electrical and Computer Engineering, Wichita State University (WSU), USA"
         />
         <MemberCard
           name="Md. Jakir Hossen"
@@ -131,10 +131,10 @@ export default function OrganizingCommitteePage() {
 
       <h2 className="mt-10">Technical Program Committee Chairs</h2>
       <div className="mt-3 grid grid-cols-1 gap-3 max-w-3xl">
-        <MemberCard
-          name="Dr. Nilanjan Dey"
+        {/* <MemberCard
+          name="Dr. Shaila Islam"
           affiliation="Department of Computer Science and Engineering, Techno International New Town, Kolkata, India"
-        />
+        /> */}
         <MemberCard
           name="Dr. Yutaka Watanobe"
           affiliation="Department of Computer Science and Engineering, University of Aizu, Aizu-Wakamatsu 965-8580, Japan"
@@ -180,7 +180,7 @@ export default function OrganizingCommitteePage() {
 
         <MemberCard
           name="Dr. Md. Rashedul Islam"
-          affiliation="Manager, Overseas AI group, Chowagiken, Japan,"
+          affiliation="Manager, R&D Offshore AI Development, AI Samurai Japan Limited, Japan"
         />
         {/* <MemberCard
           label="Creative & Design Chair"
@@ -218,9 +218,55 @@ export default function OrganizingCommitteePage() {
 
       <h2 className="mt-10">TECHNICAL PROGRAM COMMITTEE MEMBER</h2>
       <div className="mt-4 grid grid-cols-1 gap-3 max-w-3xl">
+        
+         <MemberCard
+          name="João Manuel R. S. Tavares"
+          affiliation="Professor, Universidade do Porto Faculdade de Engenharia: Porto, Porto, PT"
+        />
         <MemberCard
-          name="Dr. Md. Rajibul Islam"
-          affiliation="Department of Data Science & Engineering, Bangladesh University of Business and Technology (BUBT), Bangladesh"
+          name="Dr. Himanish Shekhar Das"
+          affiliation="Asst. Professor, Cotton University: Guwahati, Assam, IN"
+        />
+
+        <MemberCard
+          name="Dr. Thinagaran Perumal"
+          affiliation="Associate Professor, Associate Professor, Universiti Putra Malaysia"
+        />
+        <MemberCard
+          name="Dr. Onur Pekcan"
+          affiliation="Associate Professor of Civil Engineering, Middle East Technical University"
+        />
+        <MemberCard
+          name="Vincenzo Piuri"
+          affiliation="Professor, University of Milan; IEEE Region 8 Director-Elect 2021-22"
+        />
+        <MemberCard
+          name="Prof. Dr. B Anand"
+          affiliation="Professor & Head/EIE, HICET, IN"
+        />
+        <MemberCard
+          name="Dr. Sowmya V."
+          affiliation="Associate Professor, Amrita Vishwa Vidyapeetham, Coimbatore"
+        />
+        <MemberCard
+          name="Giang Nguyen"
+          affiliation="Associate Professor of Computer Science,Faculty of Informatics and Information Technologies, Slovak University of Technology, Slovakia"
+        />
+        <MemberCard
+          name="Nguyen Gia Nhu"
+          affiliation="Associate Professor at School of Computer Science, Duy Tan University, Vietnam"
+        />
+        <MemberCard
+          name="Dac-Nhuong Le"
+          affiliation="Associate Professor at Faculty of Information Technology, Haiphong University, Vietnam"
+        />
+        <MemberCard
+          name="Nguyen Thoi"
+          affiliation="Department of Fundamentals of Electronics Engineering, Ho Chi Minh City University of Technology and Education, Vietnam"
+        />
+        <MemberCard
+          name="Ching-Hsien Hsu"
+          affiliation="Professor, Dept. CSIE, Asia University"
         />
         <MemberCard
           name="Md Nahid Hasan"
