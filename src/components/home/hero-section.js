@@ -6,9 +6,9 @@ import Link from "next/link";
 import { site } from "@/config/site";
 
 const INFO = [
-  { label: "Submission deadline", value: "July 30, 2026" },
-  { label: "Notification", value: "October 15, 2026" },
-  { label: "Conference", value: "November 19-21, 2026" },
+  { label: "Submission deadline", value: "August 30, 2026" },
+  { label: "Notification", value: "November 25, 2026" },
+  { label: "Conference", value: "February 19-21, 2027" },
 ];
 
 export function HeroSection() {
@@ -95,7 +95,7 @@ export function HeroSection() {
               {...fade(0.12)}
               className="font-mono text-[0.65rem] font-semibold uppercase tracking-[0.34em] text-amber-300/90"
             >
-              {site.location} · November 19-21 2026
+              {site.location} · February 19-21 2027
             </motion.p>
 
             <motion.p
