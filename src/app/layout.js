@@ -1,4 +1,4 @@
-import { Gelasio, Bangers, Roboto_Slab } from "next/font/google";
+import { Gelasio, Bangers, Roboto_Slab, Intel_One_Mono} from "next/font/google";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { MotionRoot } from "@/components/providers/motion-root";
@@ -20,20 +20,12 @@ const robotoSlab = Roboto_Slab({
   display: "swap",
 });
 
-const bebasNeue = Gelasio({
-  weight: "600",
+const bebasNeue = Intel_One_Mono({
   subsets: ["latin"],
-  variable: "--font-bebas-neue",
+  variable: "--font-intel-one-mono",
   display: "swap",
 });
-
-const bangers = Bangers({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-bangers",
-  display: "swap",
-});
-
+  
 export const metadata = {
   metadataBase: new URL(site.url),
   title: {
@@ -79,7 +71,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${robotoSlab.variable} ${bebasNeue.variable} ${bangers.variable} m-0 h-full p-0`}
+      className={`${robotoSlab.variable} ${bebasNeue.variable} m-0 h-full p-0`}
       data-scroll-behavior="smooth"
     >
       <body className="m-0 flex min-h-full flex-col bg-slate-100 p-0 text-slate-900 antialiased">
