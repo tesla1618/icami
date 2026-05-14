@@ -5,7 +5,7 @@
 
 export const site = {
   url: "https://icami.net",
-  shortTitle: "ICAMI 2026",
+  shortTitle: "ICAMI 2027",
   fullTitle: "International Conference on Advanced Machine Intelligence",
   location: "Multimedia University (MMU), Malaysia",
   tagline: "Advancing Intelligent Systems for Real-World Impact",
@@ -14,6 +14,8 @@ export const site = {
     dark: "https://cdn.icami.net/icami_nav_dark.svg",
     favicon: "https://cdn.icami.net/favicon.png",
   },
+  /** When false, home + /sponsors show a TBA placeholder instead of `sponsorGroups` logos. */
+  showSponsorLogos: false,
   social: {
     linkedin: "https://www.linkedin.com/",
     twitter: "https://twitter.com/",
@@ -66,25 +68,25 @@ export const site = {
 export const importantDates = [
   {
     label: "Submission deadline",
-    date: "July 30, 2026",
+    date: "August 30, 2026",
     highlight: true,
     linebreak: false,
   },
   {
     label: "Notification of acceptance",
-    date: "October 15, 2026",
+    date: "November 25, 2026",
     highlight: true,
     linebreak: false,
   },
   {
     label: "Registration & Camera-ready deadline",
-    date: "October 31, 2026",
+    date: "December 16, 2026",
     highlight: true,
     linebreak: false,
   },
   {
     label: "Conference dates",
-    date: "November 19-21, 2026",
+    date: "February 19-21, 2027",
     highlight: true,
     linebreak: false,
   },
