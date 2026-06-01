@@ -110,7 +110,7 @@ export default function OrganizingCommitteePage() {
           affiliation="School of Computing, Southern Illinois University, Carbondale, IL 62901, USA"
         />
         <MemberCard
-          name="Dr. Joseph Shin"
+          name="Dr. Jungpil Shin"
           affiliation="School of Computer Science and Engineering, The University of Aizu, Aizuwakamatsu, Japan"
         />
         <h2 className="mt-8">PROGRAM CHAIRS</h2>
